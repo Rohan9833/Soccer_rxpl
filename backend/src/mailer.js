@@ -5,7 +5,7 @@ let transporter;
 
 function getTransporter() {
   if (!transporter) {
-    if (!env.emailHost || !env.emailUser || !env.emailPass || !env.emailTo) {
+    if (!env.emailHost || !env.emailUser || !env.emailPass ) {
       throw new Error('SMTP email is not fully configured. Set EMAIL_HOST, EMAIL_USER, EMAIL_PASS and EMAIL_TO.');
     }
     transporter = nodemailer.createTransport({
@@ -48,7 +48,7 @@ export async function sendDemoRequestEmail(lead) {
 
   const result = await mail.sendMail({
     from: env.emailFrom,
-    to: env.emailTo,
+    to: "info@digilateral.com",
     replyTo: lead.workEmail,
     subject: `Sales Soccer demo request — ${lead.name}`,
     text: rows.map(([label, value]) => `${label}: ${value || '—'}`).join('\n'),
