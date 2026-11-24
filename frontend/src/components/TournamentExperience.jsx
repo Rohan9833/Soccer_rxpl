@@ -156,7 +156,7 @@ function CompactMatch({ teams, highlight = false }) {
 function MobileCompactBracket() {
   return (
     <div className="mobile-compact-bracket lg:hidden">
-      <div className="compact-bracket-round compact-groups-column">
+      <div className="compact-bracket-round compact-groups-column compact-stage-groups">
         <p className="compact-bracket-label">Groups</p>
         {BRACKET.league.map((group, i) => (
           <div className={`compact-group-box compact-group-${i}`} key={i}>
@@ -185,7 +185,7 @@ function MobileCompactBracket() {
           <div className="compact-final-match"><CompactMatch teams={BRACKET.final} highlight /></div>
         </div>
       </div>
-      <div className="compact-bracket-round compact-champion">
+      <div className="compact-bracket-round compact-stage-champion compact-champion">
         <p className="compact-bracket-label">Champion</p>
         <div className="compact-trophy-wrap"><TrophyArt className="compact-trophy-art" /><span>Lift the trophy</span></div>
       </div>
