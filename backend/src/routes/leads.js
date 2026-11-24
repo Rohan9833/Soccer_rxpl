@@ -15,7 +15,8 @@ export function leadsRouter({ sendEmail }) {
         return res.status(400).json({ success: false, message: 'Please correct the highlighted fields.', errors });
       }
       try {
-        await sendEmail(value);
+        const mailResult = await sendEmail(value);
+        console.log('[demo] Email notification accepted by SMTP for:', value.workEmail, '| Message ID:', mailResult?.messageId || 'n/a');
       } catch (mailErr) {
         console.error('[email] demo request notification failed:', mailErr.message);
         return res.status(502).json({ success: false, emailSent: false, message: 'We could not send your request right now. Please try again in a moment.' });
