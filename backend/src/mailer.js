@@ -46,7 +46,7 @@ export async function sendDemoRequestEmail(lead) {
       <td style="padding:10px 12px;border-bottom:1px solid #e7e7ef;color:#171321;white-space:pre-wrap;">${escapeHtml(value)}</td>
     </tr>`).join('');
 
-  return mail.sendMail({
+  const result = await mail.sendMail({
     from: env.emailFrom,
     to: env.emailTo,
     replyTo: lead.workEmail,
@@ -64,4 +64,13 @@ export async function sendDemoRequestEmail(lead) {
         </div>
       </div>`,
   });
+
+  const recipient = env.emailTo.toLowerCase();
+  const accepted = (result.accepted || []).map((entry) => String(entry).toLowerCase());
+  const rejected = (result.rejected || []).map((entry) => String(entry).toLowerCase());
+  console.log('[email] SMTP response:', JSON.stringify({ messageId: result.messageId, response: result.response, accepted, rejected }));
+  if (!accepted.includes(recipient)) {
+    throw new Error(`SMTP did not accept recipient ${env.emailTo}. Rejected: ${rejected.join(', ') || 'no accepted recipient reported'}`);
+  }
+  return result;
 }
