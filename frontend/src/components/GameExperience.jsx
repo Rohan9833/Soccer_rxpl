@@ -513,7 +513,7 @@ const JOURNEY = [
 
 export default function GameExperience() {
   return (
-    <section id="game" className="section game-experience-section">
+    <section id="game" className="section game-experience-section !pb-2">
       <div
         aria-hidden="true"
         className="floodlight -right-40 top-20 bg-violet-glow"
