@@ -82,21 +82,23 @@ export default function AppShowcase() {
             <p>A simple, mobile-first experience for your field force to perform, compete, and grow.</p>
           </div>
           <div className="app-mobile-showcase-grid">
-            <div className="app-mobile-feature-list" aria-label="Sales Soccer app features">
-              <div><ClipboardList /><span>Log Field Activities</span></div>
-              <div><Target /><span>Join Challenges</span></div>
-              <div><TrendingUp /><span>Track Progress</span></div>
-              <div><Trophy /><span>Earn Rewards</span></div>
-              <div><Sparkles /><span>Compete &amp; Win</span></div>
-            </div>
             <div className="app-mobile-phone">
               <IPhoneMockup src={screen.src} alt={`Sales Soccer app: ${screen.title} screen`} priority={index === 0} />
             </div>
-            <div className="app-mobile-upload-card">
-              <div className="app-mobile-upload-icon"><CloudUpload /></div>
-              <h3>Activity Upload</h3>
-              <p>Log your field activities with photos, notes, and quick updates.</p>
-              <button type="button" onClick={() => go(1)}>Upload Now <ChevronRight /></button>
+            <div className="app-mobile-right-column">
+              <div className="app-mobile-feature-list" aria-label="Sales Soccer app features">
+                <div><ClipboardList /><span>Log Field Activities</span></div>
+                <div><Target /><span>Join Challenges</span></div>
+                <div><TrendingUp /><span>Track Progress</span></div>
+                <div><Trophy /><span>Earn Rewards</span></div>
+                <div><Sparkles /><span>Compete &amp; Win</span></div>
+              </div>
+              <div className="app-mobile-upload-card">
+                <div className="app-mobile-upload-icon"><CloudUpload /></div>
+                <h3>Activity Upload</h3>
+                <p>Log your field activities with photos, notes, and quick updates.</p>
+                <button type="button" onClick={() => go(1)}>Upload Now <ChevronRight /></button>
+              </div>
             </div>
           </div>
           <div className="app-mobile-dots" role="tablist" aria-label="Choose app screen">
