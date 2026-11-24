@@ -17,7 +17,7 @@ export default function Benefits() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-8 grid gap-2 sm:mt-14 sm:gap-5 sm:grid-cols-2 lg:grid-cols-6">
           {BENEFITS.map((b, i) => {
             const Icon = ICONS[b.icon];
             return (
@@ -28,7 +28,7 @@ export default function Benefits() {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.55, delay: i * 0.08 }}
                 whileHover={{ y: -6 }}
-                className={`glass group relative overflow-hidden p-8 lg:col-span-2 ${i === 3 ? 'lg:col-start-2' : ''} ${
+                className={`glass group relative overflow-hidden p-3 sm:p-5 lg:p-8 lg:col-span-2 ${i === 3 ? 'lg:col-start-2' : ''} ${
                   i === 4 ? 'sm:col-span-2 lg:col-span-2' : ''
                 }`}
               >
@@ -39,11 +39,11 @@ export default function Benefits() {
                 <span aria-hidden="true" className="absolute -bottom-6 -right-2 font-display text-[120px] font-extrabold italic leading-none text-white/[0.04]">
                   0{i + 1}
                 </span>
-                <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-royal to-magenta shadow-glow-violet ring-1 ring-white/20">
-                  <Icon size={26} />
+                <span className="relative flex h-9 w-9 items-center justify-center rounded-xl sm:h-11 sm:w-11 lg:h-14 lg:w-14 lg:rounded-2xl bg-gradient-to-br from-violet-royal to-magenta shadow-glow-violet ring-1 ring-white/20">
+                  <Icon size={18} className="sm:hidden" />\n                  <Icon size={22} className="hidden sm:block lg:hidden" />\n                  <Icon size={26} className="hidden lg:block" />
                 </span>
-                <h3 className="relative mt-6 font-display text-3xl font-bold uppercase tracking-wide">{b.title}</h3>
-                <p className="relative mt-2 text-lg text-white/70">{b.text}</p>
+                <h3 className="relative mt-3 font-display text-base font-bold uppercase leading-tight tracking-wide sm:mt-4 sm:text-xl lg:mt-6 lg:text-3xl">{b.title}</h3>
+                <p className="relative mt-1 text-xs leading-snug text-white/70 sm:text-sm lg:mt-2 lg:text-lg">{b.text}</p>
               </motion.article>
             );
           })}
