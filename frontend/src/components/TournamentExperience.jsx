@@ -170,7 +170,7 @@ function MobileCompactBracket() {
       <div className="compact-bracket-round">
         <p className="compact-bracket-label">Quarterfinals</p>
         <div className="compact-bracket-list">
-          {BRACKET.quarterfinals.map((match, i) => <CompactMatch key={i} teams={match} />)}
+          {BRACKET.quarterfinals.map((match, i) => <div className={`compact-qf-${i}`} key={i}><CompactMatch teams={match} /></div>)}
         </div>
       </div>
       <div className="compact-bracket-round">
