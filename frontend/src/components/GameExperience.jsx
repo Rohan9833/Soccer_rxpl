@@ -375,20 +375,20 @@ const JOURNEY = [
 
 export default function GameExperience() {
   return (
-    <section id="game" className="section">
+    <section id="game" className="section game-experience-section">
       <div aria-hidden="true" className="floodlight -right-40 top-20 bg-violet-glow" />
       <div className="container-x">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="game-intro mx-auto max-w-3xl text-center">
           <p className="eyebrow justify-center">The Game Experience</p>
-          <h2 className="headline mt-4 text-[clamp(2.6rem,6vw,4.8rem)]">
+          <h2 className="game-heading headline mt-4 text-[clamp(2.6rem,6vw,4.8rem)]">
             Turn Field Activities Into <span className="text-gradient pr-2">Game Progress.</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-white/70">
+          <p className="game-description mx-auto mt-5 max-w-xl text-lg text-white/70">
             Every activity keeps the game moving. Watch your performance come alive on the football field.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2">
+        <div className="game-cards mt-14 grid gap-5 md:grid-cols-2">
           {[
             {
               icon: Zap,
@@ -411,22 +411,23 @@ export default function GameExperience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="glass group relative overflow-hidden p-8 sm:p-10"
+              className="game-card glass group relative overflow-hidden p-8 sm:p-10"
             >
               <div
                 aria-hidden="true"
                 className={`absolute -right-16 -top-16 h-56 w-56 rounded-full bg-gradient-to-br ${c.accent} to-transparent blur-2xl transition-opacity duration-500 group-hover:opacity-80`}
               />
-              <div className="relative flex items-start gap-5">
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-gradient shadow-glow">
+              <div className="game-card-content relative flex items-start gap-5">
+                <span className="game-card-icon flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-gradient shadow-glow">
                   <c.icon size={26} />
                 </span>
                 <div>
-                  <h3 className="headline text-4xl sm:text-5xl">{c.name}</h3>
-                  <p className="mt-2 font-display text-xl font-semibold uppercase tracking-wide text-pink-electric">
+                  <h3 className="game-card-title headline text-4xl sm:text-5xl">{c.name}</h3>
+                  <p className="game-card-line mt-2 font-display text-xl font-semibold uppercase tracking-wide text-pink-electric">
                     {c.line}
                   </p>
-                  <p className="mt-3 text-white/70">{c.text}</p>
+                  <p className="game-card-copy mt-3 text-white/70">{c.text}</p>
+                  <p className="game-card-mobile-copy hidden">{i === 0 ? "Log field activities like calls, visits, and demos." : "Achieve targets, complete challenges, and earn points."}</p>
                 </div>
               </div>
             </motion.article>
