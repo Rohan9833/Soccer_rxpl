@@ -156,17 +156,16 @@ function CompactMatch({ teams, highlight = false }) {
 function MobileCompactBracket() {
   return (
     <div className="mobile-compact-bracket lg:hidden">
-      <div className="compact-bracket-round compact-group-round">
-        <p className="compact-bracket-label">Group A</p>
-        <div className="compact-bracket-list compact-group-list">
-          {BRACKET.league[0].map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
-        </div>
-      </div>
-      <div className="compact-bracket-round compact-group-round">
-        <p className="compact-bracket-label">Group B</p>
-        <div className="compact-bracket-list compact-group-list">
-          {BRACKET.league[1].map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
-        </div>
+      <div className="compact-bracket-round compact-groups-column">
+        <p className="compact-bracket-label">Groups</p>
+        {BRACKET.league.map((group, i) => (
+          <div className="compact-group-box" key={i}>
+            <p className="compact-group-title">Group {String.fromCharCode(65 + i)}</p>
+            <div className="compact-bracket-list compact-group-list">
+              {group.map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
+            </div>
+          </div>
+        ))}
       </div>
       <div className="compact-bracket-round">
         <p className="compact-bracket-label">Quarterfinals</p>
