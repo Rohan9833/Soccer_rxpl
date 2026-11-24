@@ -1130,3 +1130,11 @@
     will-change: transform, opacity;
   }
 }
+
+
+/* Desktop-only visual scale adjustment: keep mobile sizing untouched. */
+@media (min-width: 1024px) {
+  html {
+    font-size: 85%;
+  }
+}
