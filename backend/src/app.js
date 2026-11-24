@@ -6,8 +6,6 @@ import cors from 'cors';
 import compression from 'compression';
 import rateLimit from 'express-rate-limit';
 import { env } from './config/env.js';
-import { isDbReady as defaultIsDbReady } from './config/db.js';
-import { Lead } from './models/Lead.js';
 import { leadsRouter } from './routes/leads.js';
 import { sendDemoRequestEmail } from './mailer.js';
 import { errorHandler, notFound } from './middleware/errors.js';
@@ -15,8 +13,6 @@ import { errorHandler, notFound } from './middleware/errors.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export function createApp({
-  LeadModel = Lead,
-  isDbReady = defaultIsDbReady,
   corsOrigins = env.corsOrigins,
   rateLimitMax = env.rateLimitMax,
   rateLimitWindowMinutes = env.rateLimitWindowMinutes,
@@ -71,7 +67,7 @@ export function createApp({
   app.use('/api', express.json({ limit: '10kb' }));
 
   app.get('/api/health', (req, res) => {
-    res.json({ success: true, status: 'ok', database: isDbReady() ? 'connected' : 'disconnected' });
+    res.json({ success: true, status: 'ok' });
   });
 
   const leadLimiter = rateLimit({
@@ -82,7 +78,7 @@ export function createApp({
     message: { success: false, message: 'Too many requests. Please try again in a few minutes.' },
   });
 
-  app.use('/api/leads', leadLimiter, leadsRouter({ LeadModel, isDbReady, sendEmail }));
+  app.use('/api/leads', leadLimiter, leadsRouter({ sendEmail }));
   app.use('/api', notFound);
 
   // Optional: serve the built frontend from the same origin (single-service deployment).
