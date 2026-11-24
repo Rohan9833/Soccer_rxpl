@@ -56,6 +56,7 @@ export default function DemoForm() {
   const [touched, setTouched] = useState({});
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
   const [serverMsg, setServerMsg] = useState('');
+  const [emailSent, setEmailSent] = useState(true);
 
   const onChange = (e) => {
     const next = { ...values, [e.target.name]: e.target.value };
@@ -90,6 +91,7 @@ export default function DemoForm() {
         if (data.errors) setErrors(data.errors);
         throw new Error(data.message || 'Something went wrong. Please try again.');
       }
+      setEmailSent(data.emailSent !== false);
       setStatus('success');
       setValues(EMPTY);
       setTouched({});
@@ -146,7 +148,7 @@ export default function DemoForm() {
                 </span>
                 <h3 className="headline mt-6 text-5xl">Goal!</h3>
                 <p className="mt-3 max-w-sm text-lg text-white/75">
-                  Thank you. Your demo request has been received. The digiLATERAL team will be in touch soon.
+                  {emailSent ? 'Thank you. Your demo request has been received. The digiLATERAL team will be in touch soon.' : 'Your request was saved successfully, but our email notification could not be sent. Our team will follow up.'}
                 </p>
                 <button type="button" className="btn-ghost mt-8" onClick={() => setStatus('idle')}>
                   Submit another request
