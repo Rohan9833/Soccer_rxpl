@@ -270,8 +270,9 @@ export default function TournamentExperience() {
           </p>
         </div>
 
-        <div className="mt-14">
+        <div className="tournament-brackets mt-14">
           <DesktopBracket />
+          <MobileCompactBracket />
           <MobileBracket />
         </div>
 
