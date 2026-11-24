@@ -150,6 +150,8 @@
 
 /* Mobile hero composition: desktop styles are intentionally untouched. */
 @media (max-width: 767px) {
+  /* Disable the viewport-based section sizing on mobile; sections use natural content height. */
+  main > section:not(#top) { height: auto !important; min-height: 0 !important; padding-block: 6rem !important; }
   header { background: rgba(5, 3, 10, 0.92) !important; border-color: rgba(255,255,255,.08) !important; backdrop-filter: blur(16px); }
   header .container-x { height: 60px !important; }
   header [data-header-logo] { height: 36px !important; }
