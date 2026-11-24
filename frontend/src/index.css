@@ -297,3 +297,10 @@
   #tournament .compact-bracket-match .compact-bracket-team { font-size:.35rem !important; }
   #tournament .compact-bracket-label { font-size:.4rem !important; }
 }
+
+/* Center team names vertically inside mobile group cards. */
+@media (max-width: 767px) {
+  #tournament .compact-group-box .compact-bracket-team { align-items:center !important; }
+  #tournament .compact-group-box .compact-team-dot { margin-top:0 !important; align-self:center !important; }
+  #tournament .compact-group-box .compact-team-name { display:flex !important; align-items:center !important; min-height:100%; line-height:1.2 !important; }
+}
