@@ -162,7 +162,7 @@ export default function HODashboard() {
       <div aria-hidden="true" className="floodlight -right-32 top-32 bg-magenta" />
       <div className="container-x relative">
         <div className="grid items-center gap-14 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+          <div className="min-w-0">
             <p className="eyebrow">Command Centre: Head Office Portal</p>
             <h2 className="headline mt-4 text-[clamp(2.6rem,6vw,4.6rem)]">
               Complete Visibility. <span className="text-gradient pr-2">Centralised Control.</span>
@@ -171,7 +171,7 @@ export default function HODashboard() {
               A separate Head Office portal gives pharma brand managers and authorised HO users a clear view of every
               brand drive, along with the controls to run it.
             </p>
-            <ul className="mt-8 flex gap-3 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0 lg:space-y-3 lg:gap-0">
+            <ul className="mt-8 flex w-full min-w-0 max-w-full gap-3 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0 lg:space-y-3 lg:gap-0">
               {HO_CAPABILITIES.map((c, i) => {
                 const Icon = ICONS[c.icon];
                 return (
@@ -181,7 +181,7 @@ export default function HODashboard() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08, duration: 0.5 }}
-                    className="flex min-w-[260px] gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 lg:min-w-0"
+                    className="flex min-w-[220px] max-w-[82vw] shrink-0 gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3 lg:min-w-0 lg:max-w-none lg:shrink lg:gap-4 lg:p-4"
                   >
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/[0.06] text-pink-electric ring-1 ring-white/10">
                       <Icon size={20} />
