@@ -28,9 +28,7 @@ export default function Benefits() {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.55, delay: i * 0.08 }}
                 whileHover={{ y: -6 }}
-                className={`glass group relative overflow-hidden p-3 sm:p-5 lg:p-8 lg:col-span-2 ${i === 3 ? 'col-span-3 lg:col-start-2' : ''} ${
-                  i === 4 ? 'col-span-3 sm:col-span-2 lg:col-span-2' : ''
-                }`}
+                className={`glass group relative min-w-0 overflow-hidden p-3 sm:p-5 lg:p-8 lg:col-span-2 ${i < 3 ? 'col-span-2 sm:col-span-1' : 'col-span-3 sm:col-span-1'} ${i === 3 ? 'lg:col-start-2' : ''}`}
               >
                 <span
                   aria-hidden="true"
