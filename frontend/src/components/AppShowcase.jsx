@@ -82,9 +82,20 @@ export default function AppShowcase() {
             <p>A simple, mobile-first experience for your field force to perform, compete, and grow.</p>
           </div>
           <div className="app-mobile-showcase-grid">
-            <div className="app-mobile-phone">
+            <motion.div
+              className="app-mobile-phone"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.22}
+              dragMomentum={false}
+              whileDrag={{ cursor: 'grabbing' }}
+              onDragEnd={(_, info) => {
+                if (info.offset.x < -45 || info.velocity.x < -350) go(index + 1);
+                else if (info.offset.x > 45 || info.velocity.x > 350) go(index - 1);
+              }}
+            >
               <IPhoneMockup src={screen.src} alt={`Sales Soccer app: ${screen.title} screen`} priority={index === 0} />
-            </div>
+            </motion.div>
             <div className="app-mobile-right-column">
               <div className="app-mobile-feature-list" aria-label="Sales Soccer app features">
                 <div><ClipboardList /><span>Log Field Activities</span></div>
