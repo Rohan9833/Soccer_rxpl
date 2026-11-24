@@ -143,6 +143,53 @@ function Trophy({ small = false }) {
   );
 }
 
+function CompactTeam({ name, colorIndex = 0 }) {
+  const short = name.split(' ')[0];
+  return <div className="compact-bracket-team"><span className="compact-team-dot" style={{ background: BADGE_COLORS[colorIndex % BADGE_COLORS.length] }} />{short}</div>;
+}
+
+function CompactMatch({ teams, highlight = false }) {
+  return <div className={`compact-bracket-match ${highlight ? 'is-highlight' : ''}`}>
+    {teams.map((team, i) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
+  </div>;
+}
+
+function MobileCompactBracket() {
+  const leagueTeams = BRACKET.league.flat();
+  return (
+    <div className="mobile-compact-bracket lg:hidden">
+      <div className="compact-bracket-round">
+        <p className="compact-bracket-label">Round 1</p>
+        <div className="compact-bracket-list">
+          {leagueTeams.map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
+        </div>
+      </div>
+      <div className="compact-bracket-round">
+        <p className="compact-bracket-label">Quarterfinals</p>
+        <div className="compact-bracket-list">
+          {BRACKET.quarterfinals.map((match, i) => <CompactMatch key={i} teams={match} />)}
+        </div>
+      </div>
+      <div className="compact-bracket-round">
+        <p className="compact-bracket-label">Semifinals</p>
+        <div className="compact-bracket-list compact-semifinals">
+          {BRACKET.semifinals.map((match, i) => <CompactMatch key={i} teams={match} />)}
+        </div>
+      </div>
+      <div className="compact-bracket-round">
+        <p className="compact-bracket-label">Final</p>
+        <div className="compact-bracket-list compact-finals">
+          <CompactMatch teams={BRACKET.final} highlight />
+        </div>
+      </div>
+      <div className="compact-bracket-round compact-champion">
+        <p className="compact-bracket-label">Champion</p>
+        <div className="compact-trophy-wrap"><TrophyArt className="compact-trophy-art" /><span>Lift the trophy</span></div>
+      </div>
+    </div>
+  );
+}
+
 function MobileBracket() {
   const stages = [
     {
