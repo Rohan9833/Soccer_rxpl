@@ -401,3 +401,8 @@
     padding: 9px 5px !important;
   }
 }
+
+@media (max-width: 767px) {
+  #app .app-mobile-phone { touch-action: pan-y !important; overflow: hidden; }
+  #app .app-mobile-phone > div { will-change: transform, opacity; }
+}
