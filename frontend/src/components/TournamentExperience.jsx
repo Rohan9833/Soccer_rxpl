@@ -156,36 +156,38 @@ function CompactMatch({ teams, highlight = false }) {
 function MobileCompactBracket() {
   return (
     <div className="mobile-compact-bracket lg:hidden">
-      <div className="compact-bracket-round compact-groups-column compact-stage-groups">
-        <p className="compact-bracket-label">Groups</p>
+      <div className="compact-stage-groups compact-bracket-round">
+        <p className="compact-bracket-label">League</p>
         {BRACKET.league.map((group, i) => (
           <div className={`compact-group-box compact-group-${i}`} key={i}>
             <p className="compact-group-title">Group {String.fromCharCode(65 + i)}</p>
-            <div className="compact-bracket-list compact-group-list">
+            <div className="compact-group-list">
               {group.map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
             </div>
           </div>
         ))}
       </div>
-      <div className="compact-bracket-round compact-stage-quarterfinals">
+      <div className="compact-stage-quarterfinals compact-bracket-round">
         <p className="compact-bracket-label">Quarterfinals</p>
         <div className="compact-bracket-list">
-          {BRACKET.quarterfinals.map((match, i) => <div className={`compact-qf-${i}`} key={i}><CompactMatch teams={match} /></div>)}
+          {BRACKET.quarterfinals.map((match, i) => (
+            <div className={`compact-qf compact-qf-${i}`} key={i}><CompactMatch teams={match} /></div>
+          ))}
         </div>
       </div>
-      <div className="compact-bracket-round compact-stage-semifinals">
+      <div className="compact-stage-semifinals compact-bracket-round">
         <p className="compact-bracket-label">Semifinals</p>
         <div className="compact-bracket-list compact-semifinals">
-          {BRACKET.semifinals.map((match, i) => <div className={`compact-sf-${i}`} key={i}><CompactMatch teams={match} /></div>)}
+          {BRACKET.semifinals.map((match, i) => (
+            <div className={`compact-sf compact-sf-${i}`} key={i}><CompactMatch teams={match} /></div>
+          ))}
         </div>
       </div>
-      <div className="compact-bracket-round compact-stage-final">
+      <div className="compact-stage-final compact-bracket-round">
         <p className="compact-bracket-label">Final</p>
-        <div className="compact-bracket-list compact-finals">
-          <div className="compact-final-match"><CompactMatch teams={BRACKET.final} highlight /></div>
-        </div>
+        <div className="compact-final-match"><CompactMatch teams={BRACKET.final} highlight /></div>
       </div>
-      <div className="compact-bracket-round compact-stage-champion compact-champion">
+      <div className="compact-stage-champion compact-bracket-round">
         <p className="compact-bracket-label">Champion</p>
         <div className="compact-trophy-wrap"><TrophyArt className="compact-trophy-art" /><span>Lift the trophy</span></div>
       </div>
