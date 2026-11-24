@@ -159,26 +159,26 @@
   header #mobile-menu { background: #080511 !important; }
   header #mobile-menu a { color: white !important; border-color: rgba(255,255,255,.12) !important; }
   #top { padding-top: 60px !important; }
-  #top .hero-layout { display: block !important; position: relative; min-height: 570px !important; padding-top: 22px !important; padding-bottom: 24px !important; }
+  #top .hero-layout { display: block !important; position: relative; min-height: 450px !important; padding-top: 22px !important; padding-bottom: 12px !important; }
   #top .hero-eyebrow { display: none !important; }
-  #top .hero-headline { position: relative; z-index: 2; width: 72%; max-width: none; margin-top: 0 !important; font-size: clamp(2.35rem, 10.5vw, 3.15rem) !important; line-height: .91 !important; letter-spacing: -.04em !important; }
-  #top .hero-device { position: absolute !important; z-index: 1; top: 54px; right: -2px; width: 40% !important; max-width: 176px !important; margin: 0 !important; }
+  #top .mobile-hero-break { display: block; }\n  #top .hero-headline { position: relative; z-index: 2; width: 59%; max-width: none; margin-top: 0 !important; font-size: clamp(2.05rem, 9.2vw, 2.65rem) !important; line-height: .91 !important; letter-spacing: -.04em !important; }
+  #top .hero-device { position: absolute !important; z-index: 1; top: 44px; right: 0; width: 42% !important; max-width: 160px !important; margin: 0 !important; }
   #top .hero-device > div:first-child { filter: drop-shadow(0 12px 25px rgba(255, 62, 165, .18)); }
-  #top .hero-description { position: relative; z-index: 2; margin-top: 20px !important; width: 70%; max-width: none !important; font-size: .9rem !important; line-height: 1.35 !important; }
-  #top .hero-actions { position: relative; z-index: 3; margin-top: 18px !important; flex-direction: row !important; flex-wrap: wrap; gap: 9px !important; }
-  #top .hero-actions a { padding: 10px 13px !important; font-size: .72rem !important; line-height: 1.1 !important; white-space: nowrap; }
+  #top .hero-description { position: relative; z-index: 2; margin-top: 14px !important; width: 60%; max-width: none !important; font-size: .82rem !important; line-height: 1.3 !important; }
+  #top .hero-actions { position: relative; z-index: 3; margin-top: 14px !important; flex-direction: row !important; flex-wrap: nowrap; gap: 7px !important; width: 100%; }
+  #top .hero-actions a { padding: 9px 10px !important; font-size: .65rem !important; line-height: 1.1 !important; white-space: nowrap; }
   #top .hero-actions svg { width: 15px; height: 15px; }
   #top .hero-bullets { display: none !important; }
-  #top .hero-ticker > div { min-height: 42px; }
+  #top .hero-ticker > div { min-height: 38px; }
   #top .hero-ticker > div > div:first-child { padding-inline: 10px !important; font-size: 10px !important; letter-spacing: .08em !important; }
-  #top .hero-ticker > div > div:last-child { padding-block: 9px !important; }
+  #top .hero-ticker > div > div:last-child { padding-block: 7px !important; }
   #top .hero-ticker .ticker-track { gap: 20px !important; padding-left: 14px !important; }
-  #top .hero-ticker .ticker-track span { gap: 20px !important; font-size: 12px !important; letter-spacing: .08em !important; }
+  #top .hero-ticker .ticker-track span { gap: 20px !important; font-size: 11px !important; letter-spacing: .08em !important; }
 }
 @media (max-width: 380px) {
-  #top .hero-layout { min-height: 540px !important; }
-  #top .hero-headline { width: 76%; font-size: clamp(2.15rem, 10vw, 2.65rem) !important; }
-  #top .hero-device { width: 38% !important; }
-  #top .hero-description { width: 74%; font-size: .82rem !important; }
-  #top .hero-actions a { padding: 9px 10px !important; font-size: .67rem !important; }
+  #top .hero-layout { min-height: 420px !important; }
+  #top .hero-headline { width: 59%; font-size: clamp(1.95rem, 9.5vw, 2.35rem) !important; }
+  #top .hero-device { width: 42% !important; max-width: 148px !important; }
+  #top .hero-description { width: 60%; font-size: .78rem !important; }
+  #top .hero-actions a { padding: 8px 8px !important; font-size: .61rem !important; }
 }
