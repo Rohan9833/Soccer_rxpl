@@ -144,24 +144,28 @@ function Trophy({ small = false }) {
 }
 
 function CompactTeam({ name, colorIndex = 0 }) {
-  const short = name.split(' ')[0];
-  return <div className="compact-bracket-team"><span className="compact-team-dot" style={{ background: BADGE_COLORS[colorIndex % BADGE_COLORS.length] }} />{short}</div>;
+  return <div className="compact-bracket-team"><span className="compact-team-dot" style={{ background: BADGE_COLORS[colorIndex % BADGE_COLORS.length] }} /><span className="compact-team-name">{name}</span></div>;
 }
 
 function CompactMatch({ teams, highlight = false }) {
   return <div className={`compact-bracket-match ${highlight ? 'is-highlight' : ''}`}>
-    {teams.map((team, i) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
+    {teams.map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
   </div>;
 }
 
 function MobileCompactBracket() {
-  const leagueTeams = BRACKET.league.flat();
   return (
     <div className="mobile-compact-bracket lg:hidden">
-      <div className="compact-bracket-round">
-        <p className="compact-bracket-label">Round 1</p>
-        <div className="compact-bracket-list">
-          {leagueTeams.map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
+      <div className="compact-bracket-round compact-group-round">
+        <p className="compact-bracket-label">Group A</p>
+        <div className="compact-bracket-list compact-group-list">
+          {BRACKET.league[0].map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
+        </div>
+      </div>
+      <div className="compact-bracket-round compact-group-round">
+        <p className="compact-bracket-label">Group B</p>
+        <div className="compact-bracket-list compact-group-list">
+          {BRACKET.league[1].map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
         </div>
       </div>
       <div className="compact-bracket-round">
