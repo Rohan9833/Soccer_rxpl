@@ -17,7 +17,7 @@ export default function Benefits() {
           </p>
         </div>
 
-        <div className="mt-8 grid gap-2 sm:mt-14 sm:gap-5 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-8 grid grid-cols-3 gap-2 sm:mt-14 sm:gap-5 sm:grid-cols-2 lg:grid-cols-6">
           {BENEFITS.map((b, i) => {
             const Icon = ICONS[b.icon];
             return (
