@@ -400,3 +400,43 @@
 @media (max-width:380px) {
   #tournament .mobile-compact-bracket { height:300px !important; grid-template-columns:minmax(0,1.15fr) minmax(0,1.03fr) minmax(0,.88fr) minmax(0,.75fr) minmax(0,.65fr) !important; gap:3px !important; }
 }
+
+/* Final correction: explicitly assign every knockout match to its pyramid column and row. */
+@media (max-width: 767px) {
+  #tournament .mobile-compact-bracket {
+    grid-template-columns: minmax(0,1.2fr) minmax(0,1.08fr) minmax(0,.9fr) minmax(0,.78fr) minmax(0,.68fr) !important;
+    grid-template-rows: 18px repeat(8,minmax(0,1fr)) !important;
+    height: 320px !important;
+    gap: 4px !important;
+  }
+  #tournament .compact-stage-quarterfinals,
+  #tournament .compact-stage-semifinals,
+  #tournament .compact-stage-final,
+  #tournament .compact-stage-champion { display:contents !important; }
+  #tournament .compact-qf-0 { grid-column:2 !important; grid-row:2 / 4 !important; }
+  #tournament .compact-qf-1 { grid-column:2 !important; grid-row:4 / 6 !important; }
+  #tournament .compact-qf-2 { grid-column:2 !important; grid-row:6 / 8 !important; }
+  #tournament .compact-qf-3 { grid-column:2 !important; grid-row:8 / 10 !important; }
+  #tournament .compact-sf-0 { grid-column:3 !important; grid-row:3 / 5 !important; }
+  #tournament .compact-sf-1 { grid-column:3 !important; grid-row:7 / 9 !important; }
+  #tournament .compact-final-match { grid-column:4 !important; grid-row:5 / 7 !important; }
+  #tournament .compact-trophy-wrap { grid-column:5 !important; grid-row:5 / 7 !important; }
+  #tournament .compact-group-0 { grid-column:1 !important; grid-row:2 / 6 !important; }
+  #tournament .compact-group-1 { grid-column:1 !important; grid-row:6 / 10 !important; }
+  #tournament .compact-qf-0,
+  #tournament .compact-qf-1,
+  #tournament .compact-qf-2,
+  #tournament .compact-qf-3,
+  #tournament .compact-sf-0,
+  #tournament .compact-sf-1,
+  #tournament .compact-final-match { min-width:0 !important; display:flex !important; align-self:stretch !important; }
+  #tournament .compact-bracket-match { height:100% !important; min-height:0 !important; }
+  #tournament .compact-bracket-match .compact-bracket-team { align-items:center !important; justify-content:flex-start !important; overflow-wrap:anywhere !important; }
+  #tournament .compact-sf-0,
+  #tournament .compact-sf-1 { align-self:center !important; }
+  #tournament .compact-final-match { align-self:center !important; }
+  #tournament .compact-trophy-wrap { align-self:center !important; }
+}
+@media (max-width:380px) {
+  #tournament .mobile-compact-bracket { height:310px !important; }
+}
