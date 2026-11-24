@@ -17,7 +17,7 @@ export default function Benefits() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-3 gap-2 sm:mt-14 sm:gap-5 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-8 grid grid-cols-6 gap-2 sm:mt-14 sm:gap-5 sm:grid-cols-2 lg:grid-cols-6">
           {BENEFITS.map((b, i) => {
             const Icon = ICONS[b.icon];
             return (
@@ -28,8 +28,8 @@ export default function Benefits() {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.55, delay: i * 0.08 }}
                 whileHover={{ y: -6 }}
-                className={`glass group relative overflow-hidden p-3 sm:p-5 lg:p-8 lg:col-span-2 ${i === 3 ? 'lg:col-start-2' : ''} ${
-                  i === 4 ? 'sm:col-span-2 lg:col-span-2' : ''
+                className={`glass group relative overflow-hidden p-3 sm:p-5 lg:p-8 lg:col-span-2 ${i === 3 ? 'col-span-3 lg:col-start-2' : ''} ${
+                  i === 4 ? 'col-span-3 sm:col-span-2 lg:col-span-2' : ''
                 }`}
               >
                 <span
