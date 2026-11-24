@@ -171,7 +171,7 @@ export default function HODashboard() {
               A separate Head Office portal gives pharma brand managers and authorised HO users a clear view of every
               brand drive, along with the controls to run it.
             </p>
-            <ul className="mt-8 flex w-full min-w-0 max-w-full gap-3 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0 lg:space-y-3 lg:gap-0">
+            <ul className="mt-8 grid w-full min-w-0 grid-cols-2 gap-2 lg:flex lg:flex-col lg:space-y-3 lg:gap-0">
               {HO_CAPABILITIES.map((c, i) => {
                 const Icon = ICONS[c.icon];
                 return (
@@ -181,10 +181,10 @@ export default function HODashboard() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08, duration: 0.5 }}
-                    className="flex min-w-[220px] max-w-[82vw] shrink-0 gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3 lg:min-w-0 lg:max-w-none lg:shrink lg:gap-4 lg:p-4"
+                    className="flex min-w-0 items-start gap-2 rounded-xl border border-white/10 bg-white/[0.03] p-2.5 lg:gap-4 lg:rounded-2xl lg:p-4"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/[0.06] text-pink-electric ring-1 ring-white/10">
-                      <Icon size={20} />
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] text-pink-electric ring-1 ring-white/10 lg:h-11 lg:w-11 lg:rounded-xl">
+                      <Icon size={16} className="lg:hidden" />\n                      <Icon size={20} className="hidden lg:block" />
                     </span>
                     <span>
                       <span className="block font-display text-xl font-bold uppercase tracking-wide">{c.title}</span>
