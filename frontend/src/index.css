@@ -207,3 +207,26 @@
   #game ol li svg { width: 18px !important; height: 18px !important; }
   #game > .container-x > p:last-child { font-size: .82rem !important; margin-top: 1rem !important; }
 }
+
+/* Mobile field performance panel: pitch, zones, stat tiles. Desktop unaffected. */
+@media (max-width: 767px) {
+  #game .game-performance-visual { margin-top: 1.65rem !important; }
+  #game .pitch-performance { padding-inline: 0; }
+  #game .pitch-zones { margin-top: 9px !important; gap: 0 !important; }
+  #game .pitch-zone-label { font-size: .72rem !important; line-height: 1 !important; white-space: nowrap; }
+  #game .pitch-zones > div { gap: 0 !important; }
+  #game .pitch-zones svg { display: none !important; }
+  #game .mobile-performance-stats { display: grid !important; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; margin-top: 14px; }
+  #game .mobile-performance-stat { display:flex; min-width:0; flex-direction:column; align-items:center; justify-content:center; gap:5px; padding: 11px 5px 10px !important; border-radius: 13px !important; background:rgba(255,255,255,.055) !important; text-align:center; }
+  #game .mobile-performance-stat svg { width:19px; height:19px; color:#ff3ea5; filter:drop-shadow(0 0 7px rgba(255,62,165,.55)); }
+  #game .mobile-performance-stat strong { font-family:inherit; font-size: .9rem; line-height:1; color:white; }
+  #game .mobile-performance-stat span { font-size:.52rem; line-height:1.15; font-weight:700; text-transform:uppercase; color:rgba(255,255,255,.65); }
+  #game .mobile-performance-caption { display:block !important; margin-top: 13px !important; text-align:center; font-size:.55rem !important; letter-spacing:.28em; font-weight:800; text-transform:uppercase; color:rgba(255,255,255,.48); }
+  #game .game-journey { display:none !important; }
+}
+@media (max-width: 380px) {
+  #game .mobile-performance-stats { gap: 6px; }
+  #game .mobile-performance-stat { padding-inline: 3px !important; }
+  #game .mobile-performance-stat span { font-size: .48rem; }
+  #game .pitch-zone-label { font-size: .66rem !important; }
+}
