@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Smartphone, RotateCcw, ClipboardList, Target, TrendingUp, Trophy, CloudUpload, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Smartphone, RotateCcw, Sparkles } from 'lucide-react';
 import IPhoneMockup from './IPhoneMockup';
 import LandscapeIPhoneMockup from './LandscapeIPhoneMockup';
 import { APP_SCREENS } from '../data/content';
