@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Smartphone, RotateCcw } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Smartphone, RotateCcw, ClipboardList, Target, TrendingUp, Trophy, CloudUpload, Sparkles } from 'lucide-react';
 import IPhoneMockup from './IPhoneMockup';
 import LandscapeIPhoneMockup from './LandscapeIPhoneMockup';
 import { APP_SCREENS } from '../data/content';
@@ -74,7 +74,7 @@ export default function AppShowcase() {
     <section id="app" className="section">
       <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_45%,rgba(75,19,129,0.55),transparent_70%)]" />
       <div className="container-x relative">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="app-showcase-existing-intro mx-auto max-w-3xl text-center">
           <p className="eyebrow justify-center">
             <Smartphone size={16} /> Explore the Sales Soccer App
           </p>
@@ -87,7 +87,7 @@ export default function AppShowcase() {
         </div>
 
         {/* Mobile / tablet chip tabs */}
-        <div ref={mobileTabsRef} className="no-scrollbar -mx-5 mt-10 flex gap-2 overflow-x-auto px-5 lg:hidden" role="tablist" aria-label="App screens">
+        <div ref={mobileTabsRef} className="app-showcase-existing-tabs no-scrollbar -mx-5 mt-10 flex gap-2 overflow-x-auto px-5 lg:hidden" role="tablist" aria-label="App screens">
           {APP_SCREENS.map((s, i) => (
             <button
               key={s.id}
@@ -106,7 +106,7 @@ export default function AppShowcase() {
           ))}
         </div>
 
-        <div className="mt-8 grid items-center gap-10 lg:mt-16 lg:grid-cols-[270px_minmax(0,1fr)_300px] lg:gap-10">
+        <div className="app-showcase-existing-layout mt-8 grid items-center gap-10 lg:mt-16 lg:grid-cols-[270px_minmax(0,1fr)_300px] lg:gap-10">
           {/* Desktop tab list */}
           <div role="tablist" aria-orientation="vertical" aria-label="App screens" className="hidden flex-col gap-1.5 lg:flex" onKeyDown={onTabKey}>
             {APP_SCREENS.map((s, i) => (
