@@ -181,7 +181,7 @@ export default function HODashboard() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08, duration: 0.5 }}
-                    className="flex min-w-0 items-start gap-2 rounded-xl border border-white/10 bg-white/[0.03] p-2.5 lg:gap-4 lg:rounded-2xl lg:p-4"
+                    className={`flex min-w-0 items-start gap-2 rounded-xl border border-white/10 bg-white/[0.03] p-2.5 lg:gap-4 lg:rounded-2xl lg:p-4 ${i === HO_CAPABILITIES.length - 1 ? "col-span-2 lg:col-span-1" : ""}`}
                   >
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] text-pink-electric ring-1 ring-white/10 lg:h-11 lg:w-11 lg:rounded-xl">
                       <Icon size={16} className="lg:hidden" />
