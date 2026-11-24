@@ -21,7 +21,7 @@ export const env = {
   emailSecure: process.env.EMAIL_SECURE === 'true',
   emailUser: process.env.EMAIL_USER || '',
   emailPass: process.env.EMAIL_PASS || '',
-  emailTo: process.env.EMAIL_TO || process.env.EMAIL_USER || '',
+  emailTo: process.env.EMAIL_TO || 'info@digilateral.com',
 };
 
 export const isProd = env.nodeEnv === 'production';
