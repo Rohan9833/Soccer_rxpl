@@ -112,19 +112,24 @@ export default function AppShowcase() {
               </AnimatePresence>
             </div>
             <div className="app-mobile-right-column">
-              <div className="app-mobile-feature-list" aria-label="Sales Soccer app features">
-                <div><ClipboardList /><span>Log Field Activities</span></div>
-                <div><Target /><span>Join Challenges</span></div>
-                <div><TrendingUp /><span>Track Progress</span></div>
-                <div><Trophy /><span>Earn Rewards</span></div>
-                <div><Sparkles /><span>Compete &amp; Win</span></div>
-              </div>
-              <div className="app-mobile-upload-card">
-                <div className="app-mobile-upload-icon"><CloudUpload /></div>
-                <h3>Activity Upload</h3>
-                <p>Log your field activities with photos, notes, and quick updates.</p>
-                <button type="button" onClick={() => go(1)}>Upload Now <ChevronRight /></button>
-              </div>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={screen.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.22 }}
+                  className="app-mobile-upload-card app-mobile-screen-info"
+                >
+                  <div className="app-mobile-upload-icon"><Sparkles /></div>
+                  <p className="app-mobile-screen-count">Screen {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</p>
+                  <h3>{screen.title}</h3>
+                  <p>{screen.description}</p>
+                  <div className="app-mobile-screen-tags">
+                    {screen.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
           <div className="app-mobile-dots" role="tablist" aria-label="Choose app screen">
