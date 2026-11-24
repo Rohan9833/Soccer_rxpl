@@ -184,11 +184,12 @@ export default function HODashboard() {
                     className="flex min-w-0 items-start gap-2 rounded-xl border border-white/10 bg-white/[0.03] p-2.5 lg:gap-4 lg:rounded-2xl lg:p-4"
                   >
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] text-pink-electric ring-1 ring-white/10 lg:h-11 lg:w-11 lg:rounded-xl">
-                      <Icon size={16} className="lg:hidden" />\n                      <Icon size={20} className="hidden lg:block" />
+                      <Icon size={16} className="lg:hidden" />
+                      <Icon size={20} className="hidden lg:block" />
                     </span>
-                    <span>
-                      <span className="block font-display text-xl font-bold uppercase tracking-wide">{c.title}</span>
-                      <span className="text-white/65">{c.text}</span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block font-display text-xs font-bold uppercase leading-tight tracking-wide sm:text-sm lg:text-xl">{c.title}</span>
+                      <span className="block text-[10px] leading-snug text-white/65 sm:text-xs lg:text-base">{c.text}</span>
                     </span>
                   </motion.li>
                 );
