@@ -171,7 +171,7 @@ export default function HODashboard() {
               A separate Head Office portal gives pharma brand managers and authorised HO users a clear view of every
               brand drive, along with the controls to run it.
             </p>
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-5">
               {HO_CAPABILITIES.map((c, i) => {
                 const Icon = ICONS[c.icon];
                 return (
@@ -181,13 +181,13 @@ export default function HODashboard() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08, duration: 0.5 }}
-                    className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4"
+                    className="flex min-w-0 flex-col gap-2 rounded-2xl border border-white/10 bg-white/[0.03] p-3 xl:p-3"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/[0.06] text-pink-electric ring-1 ring-white/10">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/[0.06] text-pink-electric ring-1 ring-white/10">
                       <Icon size={20} />
                     </span>
                     <span>
-                      <span className="block font-display text-xl font-bold uppercase tracking-wide">{c.title}</span>
+                      <span className="block font-display text-base font-bold uppercase tracking-wide">{c.title}</span>
                       <span className="text-white/65">{c.text}</span>
                     </span>
                   </motion.li>
