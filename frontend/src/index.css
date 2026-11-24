@@ -161,7 +161,8 @@
   #top { padding-top: 60px !important; }
   #top .hero-layout { display: block !important; position: relative; min-height: 450px !important; padding-top: 22px !important; padding-bottom: 12px !important; }
   #top .hero-eyebrow { display: none !important; }
-  #top .mobile-hero-break { display: block; }\n  #top .hero-headline { position: relative; z-index: 2; width: 59%; max-width: none; margin-top: 0 !important; font-size: clamp(2.05rem, 9.2vw, 2.65rem) !important; line-height: .91 !important; letter-spacing: -.04em !important; }
+  #top .mobile-hero-break { display: block; }
+  #top .hero-headline { position: relative; z-index: 2; width: 59%; max-width: none; margin-top: 0 !important; font-size: clamp(2.05rem, 9.2vw, 2.65rem) !important; line-height: .91 !important; letter-spacing: -.04em !important; }
   #top .hero-device { position: absolute !important; z-index: 1; top: 44px; right: 0; width: 42% !important; max-width: 160px !important; margin: 0 !important; }
   #top .hero-device > div:first-child { filter: drop-shadow(0 12px 25px rgba(255, 62, 165, .18)); }
   #top .hero-description { position: relative; z-index: 2; margin-top: 14px !important; width: 60%; max-width: none !important; font-size: .82rem !important; line-height: 1.3 !important; }
@@ -297,4 +298,40 @@
   #tournament .compact-bracket-team { font-size:9px !important; }
   #tournament .compact-bracket-match .compact-bracket-team { font-size:9px !important; }
 }
-\n/* Mobile Sales Experience reference layout. All rules are scoped to #app. */\n@media (max-width: 767px) {\n  #app { padding-block: 2.5rem 3rem !important; overflow: hidden; }\n  #app .container-x { padding-inline: 12px !important; }\n  #app .app-showcase-existing-intro, #app .app-showcase-existing-tabs, #app .app-showcase-existing-layout { display: none !important; }\n  #app .app-showcase-mobile-reference { display: block !important; }\n  #app .app-mobile-intro { text-align: center; max-width: 100%; margin: 0 auto; }\n  #app .app-mobile-intro .eyebrow { display: block !important; margin: 0 auto 10px !important; font-size: .58rem !important; letter-spacing: .3em !important; color: #ff45ba !important; }\n  #app .app-mobile-intro h2 { margin: 0 !important; font-size: clamp(1.7rem, 7.5vw, 2.25rem) !important; line-height: .98 !important; letter-spacing: -.035em !important; }\n  #app .app-mobile-intro > p:last-child { margin: 10px auto 0 !important; max-width: 320px; font-size: .72rem !important; line-height: 1.3 !important; color: rgba(255,255,255,.68) !important; }\n  #app .app-mobile-showcase-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.9fr) minmax(0,1fr); align-items: center; gap: 7px; margin-top: 1.15rem; }\n  #app .app-mobile-feature-list { display: flex; flex-direction: column; gap: 7px; min-width: 0; }\n  #app .app-mobile-feature-list > div { display: flex; align-items: center; min-width: 0; gap: 5px; padding: 8px 6px; border: 1px solid rgba(255,62,165,.26); border-radius: 9px; background: linear-gradient(110deg,rgba(255,62,165,.14),rgba(255,255,255,.045)); box-shadow: 0 0 12px rgba(255,62,165,.06); }\n  #app .app-mobile-feature-list svg { width: 13px; height: 13px; flex: 0 0 13px; color: #ff45ba; filter: drop-shadow(0 0 5px rgba(255,62,165,.45)); }\n  #app .app-mobile-feature-list span { font-size: clamp(.42rem, 1.8vw, .55rem); font-weight: 800; line-height: 1.08; text-transform: uppercase; color: rgba(255,255,255,.9); }\n  #app .app-mobile-phone { min-width: 0; width: 100%; }\n  #app .app-mobile-phone > div { width: 100% !important; max-width: none !important; }\n  #app .app-mobile-phone img { display: block; }\n  #app .app-mobile-upload-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; padding: 9px 6px; border: 1px solid rgba(255,62,165,.22); border-radius: 13px; background: linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,62,165,.06)); text-align: center; box-shadow: inset 0 0 20px rgba(255,62,165,.04); }\n  #app .app-mobile-upload-icon { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; margin-bottom: 9px; background: rgba(255,62,165,.17); color: #ff45ba; box-shadow: 0 0 18px rgba(255,62,165,.28); }\n  #app .app-mobile-upload-icon svg { width: 16px; height: 16px; }\n  #app .app-mobile-upload-card h3 { margin: 0; font-size: .58rem; line-height: 1.1; font-weight: 900; text-transform: uppercase; color: white; }\n  #app .app-mobile-upload-card p { margin: 7px 0 9px; font-size: .48rem; line-height: 1.25; color: rgba(255,255,255,.66); }\n  #app .app-mobile-upload-card button { display: inline-flex; align-items: center; justify-content: center; gap: 3px; width: 100%; padding: 6px 4px; border: 1px solid rgba(255,62,165,.65); border-radius: 999px; font-size: .48rem; line-height: 1; font-weight: 800; color: white; white-space: nowrap; background: rgba(255,62,165,.08); }\n  #app .app-mobile-upload-card button svg { width: 10px; height: 10px; }\n  #app .app-mobile-dots { display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: 12px; }\n  #app .app-mobile-dots button { width: 6px; height: 6px; border: 0; border-radius: 50%; padding: 0; background: rgba(255,255,255,.25); }\n  #app .app-mobile-dots button[aria-selected="true"] { width: 7px; height: 7px; background: #ff45ba; box-shadow: 0 0 8px rgba(255,62,165,.6); }\n}\n@media (max-width: 360px) {\n  #app .app-mobile-showcase-grid { gap: 5px; }\n  #app .app-mobile-feature-list > div { padding: 7px 4px; gap: 4px; }\n  #app .app-mobile-feature-list svg { width: 11px; height: 11px; flex-basis: 11px; }\n  #app .app-mobile-upload-card { padding-inline: 4px; }\n  #app .app-mobile-upload-card p { font-size: .44rem; }\n}\n
+
+/* Mobile Sales Experience reference layout. All rules are scoped to #app. */
+@media (max-width: 767px) {
+  #app { padding-block: 2.5rem 3rem !important; overflow: hidden; }
+  #app .container-x { padding-inline: 12px !important; }
+  #app .app-showcase-existing-intro, #app .app-showcase-existing-tabs, #app .app-showcase-existing-layout { display: none !important; }
+  #app .app-showcase-mobile-reference { display: block !important; }
+  #app .app-mobile-intro { text-align: center; max-width: 100%; margin: 0 auto; }
+  #app .app-mobile-intro .eyebrow { display: block !important; margin: 0 auto 10px !important; font-size: .58rem !important; letter-spacing: .3em !important; color: #ff45ba !important; }
+  #app .app-mobile-intro h2 { margin: 0 !important; font-size: clamp(1.7rem, 7.5vw, 2.25rem) !important; line-height: .98 !important; letter-spacing: -.035em !important; }
+  #app .app-mobile-intro > p:last-child { margin: 10px auto 0 !important; max-width: 320px; font-size: .72rem !important; line-height: 1.3 !important; color: rgba(255,255,255,.68) !important; }
+  #app .app-mobile-showcase-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.9fr) minmax(0,1fr); align-items: center; gap: 7px; margin-top: 1.15rem; }
+  #app .app-mobile-feature-list { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+  #app .app-mobile-feature-list > div { display: flex; align-items: center; min-width: 0; gap: 5px; padding: 8px 6px; border: 1px solid rgba(255,62,165,.26); border-radius: 9px; background: linear-gradient(110deg,rgba(255,62,165,.14),rgba(255,255,255,.045)); box-shadow: 0 0 12px rgba(255,62,165,.06); }
+  #app .app-mobile-feature-list svg { width: 13px; height: 13px; flex: 0 0 13px; color: #ff45ba; filter: drop-shadow(0 0 5px rgba(255,62,165,.45)); }
+  #app .app-mobile-feature-list span { font-size: clamp(.42rem, 1.8vw, .55rem); font-weight: 800; line-height: 1.08; text-transform: uppercase; color: rgba(255,255,255,.9); }
+  #app .app-mobile-phone { min-width: 0; width: 100%; }
+  #app .app-mobile-phone > div { width: 100% !important; max-width: none !important; }
+  #app .app-mobile-phone img { display: block; }
+  #app .app-mobile-upload-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; padding: 9px 6px; border: 1px solid rgba(255,62,165,.22); border-radius: 13px; background: linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,62,165,.06)); text-align: center; box-shadow: inset 0 0 20px rgba(255,62,165,.04); }
+  #app .app-mobile-upload-icon { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; margin-bottom: 9px; background: rgba(255,62,165,.17); color: #ff45ba; box-shadow: 0 0 18px rgba(255,62,165,.28); }
+  #app .app-mobile-upload-icon svg { width: 16px; height: 16px; }
+  #app .app-mobile-upload-card h3 { margin: 0; font-size: .58rem; line-height: 1.1; font-weight: 900; text-transform: uppercase; color: white; }
+  #app .app-mobile-upload-card p { margin: 7px 0 9px; font-size: .48rem; line-height: 1.25; color: rgba(255,255,255,.66); }
+  #app .app-mobile-upload-card button { display: inline-flex; align-items: center; justify-content: center; gap: 3px; width: 100%; padding: 6px 4px; border: 1px solid rgba(255,62,165,.65); border-radius: 999px; font-size: .48rem; line-height: 1; font-weight: 800; color: white; white-space: nowrap; background: rgba(255,62,165,.08); }
+  #app .app-mobile-upload-card button svg { width: 10px; height: 10px; }
+  #app .app-mobile-dots { display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: 12px; }
+  #app .app-mobile-dots button { width: 6px; height: 6px; border: 0; border-radius: 50%; padding: 0; background: rgba(255,255,255,.25); }
+  #app .app-mobile-dots button[aria-selected="true"] { width: 7px; height: 7px; background: #ff45ba; box-shadow: 0 0 8px rgba(255,62,165,.6); }
+}
+@media (max-width: 360px) {
+  #app .app-mobile-showcase-grid { gap: 5px; }
+  #app .app-mobile-feature-list > div { padding: 7px 4px; gap: 4px; }
+  #app .app-mobile-feature-list svg { width: 11px; height: 11px; flex-basis: 11px; }
+  #app .app-mobile-upload-card { padding-inline: 4px; }
+  #app .app-mobile-upload-card p { font-size: .44rem; }
+}
