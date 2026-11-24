@@ -182,3 +182,28 @@
   #top .hero-description { width: 60%; font-size: .78rem !important; }
   #top .hero-actions a { padding: 8px 8px !important; font-size: .61rem !important; }
 }
+
+/* Mobile-only Field Activities section styling, following the supplied reference. */
+@media (max-width: 767px) {
+  #game.game-experience-section { padding-block: 3.25rem !important; }
+  #game .game-intro { max-width: 100%; }
+  #game .game-intro .eyebrow { font-size: .62rem !important; letter-spacing: .28em !important; }
+  #game .game-heading { margin-top: 12px !important; font-size: clamp(1.75rem, 8vw, 2.2rem) !important; line-height: .98 !important; }
+  #game .game-description { margin-top: 12px !important; font-size: .78rem !important; line-height: 1.35 !important; max-width: 290px !important; }
+  #game .game-cards { margin-top: 1rem !important; grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 10px !important; }
+  #game .game-card { padding: 13px 12px !important; min-height: 104px; border-radius: 17px !important; background: rgba(255,255,255,.055) !important; }
+  #game .game-card > div:first-child { opacity: .28; width: 8rem; height: 8rem; right: -2.5rem; top: -2.5rem; }
+  #game .game-card-content { gap: 10px !important; align-items: flex-start !important; }
+  #game .game-card-icon { width: 40px !important; height: 40px !important; border-radius: 50% !important; flex: 0 0 40px !important; box-shadow: 0 0 18px rgba(255,62,165,.55) !important; }
+  #game .game-card-icon svg { width: 21px !important; height: 21px !important; }
+  #game .game-card-title { font-size: 1.05rem !important; line-height: 1.05 !important; margin-top: 3px !important; }
+  #game .game-card-line, #game .game-card-copy { display: none !important; }
+  #game .game-card-mobile-copy { display: block !important; margin-top: 7px !important; font-size: .68rem !important; line-height: 1.28 !important; color: rgba(255,255,255,.68) !important; max-width: 135px; }
+  #game .game-card-content > div { min-width: 0; }
+  #game .mt-16 { margin-top: 2rem !important; }
+  #game ol { margin-top: 2rem !important; gap: 9px !important; }
+  #game ol li { padding: 12px 8px !important; gap: 7px !important; }
+  #game ol li span:last-child { font-size: .75rem !important; line-height: 1.15 !important; }
+  #game ol li svg { width: 18px !important; height: 18px !important; }
+  #game > .container-x > p:last-child { font-size: .82rem !important; margin-top: 1rem !important; }
+}
