@@ -30,7 +30,7 @@ function fakeModel() {
 
 const make = (opts = {}) => {
   const LeadModel = fakeModel();
-  const app = createApp({ LeadModel, isDbReady: () => true, rateLimitMax: 100, corsOrigins: ['https://sales-soccer.example'], ...opts });
+  const app = createApp({ LeadModel, isDbReady: () => true, rateLimitMax: 100, corsOrigins: ['https://sales-soccer.example'], sendEmail: async () => {}, ...opts });
   return { app, LeadModel };
 };
 
@@ -53,7 +53,7 @@ test('stores a valid lead and normalises fields', async () => {
   assert.ok(s.submittedAt instanceof Date);
 });
 
-test('message is optional', async () => {
+test('emails the lead notification after storing a valid request', async () => {\n  const sent = [];\n  const { app } = make({ sendEmail: async (lead) => sent.push(lead) });\n  const r = await request(app).post('/api/leads').send(valid);\n  assert.equal(r.status, 201);\n  assert.equal(r.body.emailSent, true);\n  assert.equal(sent.length, 1);\n  assert.equal(sent[0].workEmail, 'asha.mehta@acmepharma.com');\n});\n\ntest('email failure does not lose the saved lead or cause duplicate submission', async () => {\n  const { app, LeadModel } = make({ sendEmail: async () => { throw new Error('SMTP unavailable'); } });\n  const r = await request(app).post('/api/leads').send(valid);\n  assert.equal(r.status, 201);\n  assert.equal(r.body.success, true);\n  assert.equal(r.body.emailSent, false);\n  assert.equal(LeadModel.saved.length, 1);\n});\n\ntest('message is optional', async () => {
   const { app } = make();
   const r = await request(app).post('/api/leads').send({ ...valid, message: '' });
   assert.equal(r.status, 201);
