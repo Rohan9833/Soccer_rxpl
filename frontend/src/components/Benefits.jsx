@@ -40,10 +40,9 @@ export default function Benefits() {
                   0{i + 1}
                 </span>
                 <span className="relative flex h-9 w-9 items-center justify-center rounded-xl sm:h-11 sm:w-11 lg:h-14 lg:w-14 lg:rounded-2xl bg-gradient-to-br from-violet-royal to-magenta shadow-glow-violet ring-1 ring-white/20">
-                  <Icon size={18} className="sm:hidden" />\n                  <Icon size={22} className="hidden sm:block lg:hidden" />\n                  <Icon size={26} className="hidden lg:block" />
-                </span>
-                <h3 className="relative mt-3 line-clamp-2 font-display text-base font-bold uppercase leading-tight tracking-wide sm:mt-4 sm:text-xl lg:mt-6 lg:text-3xl">{b.title}</h3>
-                <p className="relative mt-1 line-clamp-2 text-xs leading-snug text-white/70 sm:text-sm lg:mt-2 lg:text-lg">{b.text}</p>
+                  <Icon size={18} className="h-[18px] w-[18px] sm:h-[22px] sm:w-[22px] lg:h-[26px] lg:w-[26px]" /></span>
+                <h3 className="relative mt-3 line-clamp-2 font-display text-[13px] font-bold uppercase leading-tight tracking-wide sm:mt-4 sm:text-xl lg:mt-6 lg:text-3xl">{b.title}</h3>
+                <p className="relative mt-1 line-clamp-2 text-[10px] leading-snug text-white/70 sm:text-sm lg:mt-2 lg:text-lg">{b.text}</p>
               </motion.article>
             );
           })}
