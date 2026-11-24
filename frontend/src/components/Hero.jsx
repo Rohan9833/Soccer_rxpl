@@ -49,9 +49,9 @@ export default function Hero({ ready = true }) {
         <div className="floodlight right-0 top-[-200px] bg-magenta" />
       </div>
 
-      <div className="container-x grid min-h-[calc(100svh-72px)] items-center gap-12 pb-16 pt-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-6 lg:pb-24">
+      <div className="hero-layout container-x grid min-h-[calc(100svh-72px)] items-center gap-12 pb-16 pt-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-6 lg:pb-24">
         <div className="relative z-10 max-w-2xl">
-          <motion.p variants={fadeUp} initial="hidden" animate={ready ? 'show' : 'hidden'} custom={0} className="eyebrow">
+          <motion.p variants={fadeUp} initial="hidden" animate={ready ? 'show' : 'hidden'} custom={0} className="eyebrow hero-eyebrow">
             <span className="h-px w-10 bg-pink-electric" />
             Dribble. Goal. Lead.
           </motion.p>
@@ -61,7 +61,7 @@ export default function Hero({ ready = true }) {
             initial="hidden"
             animate={ready ? 'show' : 'hidden'}
             custom={1}
-            className="headline mt-5 text-[clamp(3.1rem,8.4vw,6.6rem)]"
+            className="hero-headline headline mt-5 text-[clamp(3.1rem,8.4vw,6.6rem)]"
           >
             Make Your Brand Drive Feel Like{' '}
             <span className="text-gradient pr-2">Match Day.</span>
@@ -72,7 +72,7 @@ export default function Hero({ ready = true }) {
             initial="hidden"
             animate={ready ? 'show' : 'hidden'}
             custom={2}
-            className="mt-6 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl"
+            className="hero-description mt-6 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl"
           >
             Turn everyday field-force activities into an exciting football-style tournament.
           </motion.p>
@@ -82,7 +82,7 @@ export default function Hero({ ready = true }) {
             initial="hidden"
             animate={ready ? 'show' : 'hidden'}
             custom={3}
-            className="mt-9 flex flex-col gap-4 sm:flex-row"
+            className="hero-actions mt-9 flex flex-col gap-4 sm:flex-row"
           >
             <a href="#demo" className="btn-primary group">
               Request a Demo
@@ -99,7 +99,7 @@ export default function Hero({ ready = true }) {
             initial="hidden"
             animate={ready ? 'show' : 'hidden'}
             custom={4}
-            className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-white/60"
+            className="hero-bullets mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-white/60"
           >
             {['A football-style sales tournament for brand drives', 'Built by digiLATERAL'].map((t) => (
               <li key={t} className="flex items-center gap-2">
@@ -111,7 +111,7 @@ export default function Hero({ ready = true }) {
         </div>
 
         {/* Device */}
-        <div className="relative mx-auto w-full max-w-[290px] sm:max-w-[320px] lg:mr-4 lg:max-w-[340px] xl:max-w-[360px]">
+        <div className="hero-device relative mx-auto w-full max-w-[290px] sm:max-w-[320px] lg:mr-4 lg:max-w-[340px] xl:max-w-[360px]">
           <motion.div
             initial={{ opacity: 0, y: 60, rotate: 0 }}
             animate={ready ? { opacity: 1, y: 0, rotate: -5 } : { opacity: 0, y: 60, rotate: 0 }}
@@ -149,7 +149,7 @@ export default function Hero({ ready = true }) {
       </div>
 
       {/* Broadcast ticker */}
-      <div className="relative border-y border-white/10 bg-night-900/80 backdrop-blur">
+      <div className="hero-ticker relative border-y border-white/10 bg-night-900/80 backdrop-blur">
         <div className="flex items-stretch">
           <div className="relative z-10 flex shrink-0 items-center gap-2 bg-brand-gradient px-4 font-display text-sm font-extrabold uppercase italic tracking-widest sm:px-6">
             <span className="h-2 w-2 rounded-full bg-white" /> Match Centre
