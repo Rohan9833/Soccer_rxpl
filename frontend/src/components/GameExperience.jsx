@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { Football } from './Artwork';
-import { Zap, Goal, Upload, Footprints, MoveRight, Flag } from 'lucide-react';
+import { Zap, Goal, Upload, Footprints, MoveRight, Flag, Trophy } from 'lucide-react';
 
 const ZONES = ['Defense', 'Midfield', 'Attack'];
 
@@ -262,7 +262,7 @@ function Pitch() {
   const sy = reduce ? laneY(37) : FEET;
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="pitch-performance relative">
       <div className="relative">
         <div className="[perspective:1400px]">
           <div className="relative origin-bottom sm:[transform:rotateX(24deg)]">
@@ -352,10 +352,10 @@ function Pitch() {
         </div>
       </div>
 
-      <div className="mt-6 grid grid-cols-3 items-center text-center">
+      <div className="pitch-zones mt-6 grid grid-cols-3 items-center text-center">
         {ZONES.map((z, i) => (
           <div key={z} className="relative flex items-center justify-center gap-2">
-            <span className="headline text-2xl text-white sm:text-4xl">{z}</span>
+            <span className="pitch-zone-label headline text-2xl text-white sm:text-4xl">{z}</span>
             {i < ZONES.length - 1 && (
               <MoveRight className="absolute -right-3 hidden text-pink-electric sm:block" size={28} aria-hidden="true" />
             )}
@@ -439,12 +439,12 @@ export default function GameExperience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
-          className="mt-16 sm:mt-20"
+          className="game-performance-visual mt-16 sm:mt-20"
         >
           <Pitch />
         </motion.div>
 
-        <ol className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="mobile-performance-stats hidden" aria-label="Live field performance statistics">\n          {[\n            { icon: Footprints, value: "32", label: "Activities" },\n            { icon: Goal, value: "08", label: "Challenges" },\n            { icon: Flag, value: "14", label: "Completed" },\n            { icon: Trophy, value: "10", label: "Rewards" },\n          ].map((s) => (\n            <div key={s.label} className="mobile-performance-stat glass">\n              <s.icon aria-hidden="true" />\n              <strong>{s.value}</strong>\n              <span>{s.label}</span>\n            </div>\n          ))}\n        </div>\n        <p className="mobile-performance-caption hidden">Live Field Performance</p>\n        <ol className="game-journey mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
           {JOURNEY.map((s, i) => (
             <li key={s.label} className="glass flex flex-col items-center gap-3 !rounded-2xl px-4 py-5 text-center">
               <span className="font-display text-sm font-bold tracking-widest text-white/40">0{i + 1}</span>
