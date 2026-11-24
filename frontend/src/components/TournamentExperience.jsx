@@ -159,7 +159,7 @@ function MobileCompactBracket() {
       <div className="compact-bracket-round compact-groups-column">
         <p className="compact-bracket-label">Groups</p>
         {BRACKET.league.map((group, i) => (
-          <div className="compact-group-box" key={i}>
+          <div className={`compact-group-box compact-group-${i}`} key={i}>
             <p className="compact-group-title">Group {String.fromCharCode(65 + i)}</p>
             <div className="compact-bracket-list compact-group-list">
               {group.map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
@@ -176,13 +176,13 @@ function MobileCompactBracket() {
       <div className="compact-bracket-round">
         <p className="compact-bracket-label">Semifinals</p>
         <div className="compact-bracket-list compact-semifinals">
-          {BRACKET.semifinals.map((match, i) => <CompactMatch key={i} teams={match} />)}
+          {BRACKET.semifinals.map((match, i) => <div className={`compact-sf-${i}`} key={i}><CompactMatch teams={match} /></div>)}
         </div>
       </div>
       <div className="compact-bracket-round">
         <p className="compact-bracket-label">Final</p>
         <div className="compact-bracket-list compact-finals">
-          <CompactMatch teams={BRACKET.final} highlight />
+          <div className="compact-final-match"><CompactMatch teams={BRACKET.final} highlight /></div>
         </div>
       </div>
       <div className="compact-bracket-round compact-champion">
