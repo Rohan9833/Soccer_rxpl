@@ -269,3 +269,21 @@
   #tournament .compact-bracket-match .compact-bracket-team { font-size:.36rem; }
   #tournament .compact-trophy-art { max-width:50px; }
 }
+
+/* Full team names and Group A/B are preserved in the mobile tournament flow. */
+@media (max-width: 767px) {
+  #tournament .mobile-compact-bracket { width:max-content !important; min-width:100%; grid-template-columns: 150px 150px 150px 130px 115px 105px !important; gap:8px !important; }
+  #tournament .compact-bracket-team { height:auto !important; min-height:29px !important; white-space:normal !important; overflow:visible !important; font-size:.62rem !important; line-height:1.12 !important; padding:5px 5px !important; }
+  #tournament .compact-team-name { display:block; min-width:0; overflow-wrap:anywhere; }
+  #tournament .compact-group-list { gap:7px !important; }
+  #tournament .compact-bracket-label { font-size:.56rem !important; }
+  #tournament .compact-bracket-match .compact-bracket-team { min-height:26px !important; height:auto !important; font-size:.56rem !important; }
+  #tournament .compact-semifinals { margin-top:22px !important; }
+  #tournament .compact-finals { margin-top:44px !important; }
+  #tournament .mobile-compact-bracket { overflow:visible !important; }
+  #tournament .tournament-brackets { overflow-x:auto !important; overflow-y:hidden !important; -webkit-overflow-scrolling:touch; padding-bottom:8px; }
+}
+@media (max-width: 380px) {
+  #tournament .mobile-compact-bracket { grid-template-columns: 140px 140px 140px 120px 105px 100px !important; }
+  #tournament .compact-bracket-team { font-size:.58rem !important; }
+}
