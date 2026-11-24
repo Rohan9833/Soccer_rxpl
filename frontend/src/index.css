@@ -271,172 +271,104 @@
 }
 
 
-/* Mobile tournament: grouped teams in one compact, non-scrollable five-stage flow. */
-@media (max-width: 767px) {
-  #tournament .mobile-compact-bracket { display:grid !important; grid-template-columns: 1.12fr 1.08fr .95fr .9fr .85fr !important; width:100% !important; min-width:0 !important; gap:4px !important; align-items:start; }
-  #tournament .tournament-brackets { overflow:visible !important; }
-  #tournament .compact-bracket-round { min-width:0; }
-  #tournament .compact-bracket-label { font-size:.44rem !important; letter-spacing:0 !important; min-height:22px; white-space:normal !important; margin-bottom:5px !important; }
-  #tournament .compact-group-box { padding:4px 3px; border:1px solid rgba(255,255,255,.09); border-radius:7px; background:rgba(255,255,255,.035); margin-bottom:5px; }
-  #tournament .compact-group-title { text-align:center; color:#ff45ba; font-size:.43rem; font-weight:800; text-transform:uppercase; margin-bottom:4px; line-height:1; }
-  #tournament .compact-group-list { gap:3px !important; }
-  #tournament .compact-bracket-team { min-height:24px !important; height:auto !important; white-space:normal !important; overflow:visible !important; font-size:.4rem !important; line-height:1.1 !important; padding:3px !important; gap:3px !important; align-items:flex-start !important; }
-  #tournament .compact-team-name { min-width:0; overflow-wrap:anywhere; }
-  #tournament .compact-team-dot { width:5px !important; height:5px !important; flex-basis:5px !important; margin-top:2px; }
-  #tournament .compact-bracket-match { padding:2px !important; gap:2px !important; }
-  #tournament .compact-bracket-match .compact-bracket-team { min-height:22px !important; height:auto !important; font-size:.38rem !important; padding:2px !important; }
-  #tournament .compact-semifinals { margin-top:13px !important; gap:8px !important; }
-  #tournament .compact-finals { margin-top:26px !important; }
-  #tournament .compact-trophy-wrap { min-height:110px !important; padding:3px !important; }
-  #tournament .compact-trophy-art { max-width:48px !important; height:56px !important; }
-  #tournament .compact-trophy-wrap span { font-size:.38rem !important; }
-}
-@media (max-width: 380px) {
-  #tournament .mobile-compact-bracket { gap:3px !important; grid-template-columns: 1.12fr 1.08fr .95fr .9fr .85fr !important; }
-  #tournament .compact-bracket-team { font-size:.37rem !important; }
-  #tournament .compact-bracket-match .compact-bracket-team { font-size:.35rem !important; }
-  #tournament .compact-bracket-label { font-size:.4rem !important; }
-}
 
-/* Center team names vertically inside mobile group cards. */
-@media (max-width: 767px) {
-  #tournament .compact-group-box .compact-bracket-team { align-items:center !important; }
-  #tournament .compact-group-box .compact-team-dot { margin-top:0 !important; align-self:center !important; }
-  #tournament .compact-group-box .compact-team-name { display:flex !important; align-items:center !important; min-height:100%; line-height:1.2 !important; }
-}
-
-/* Vertically center team labels in knockout-stage cards as well. */
-@media (max-width: 767px) {
-  #tournament .compact-bracket-match .compact-bracket-team { align-items:center !important; }
-  #tournament .compact-bracket-match .compact-team-dot { margin-top:0 !important; align-self:center !important; }
-  #tournament .compact-bracket-match .compact-team-name { display:flex !important; align-items:center !important; min-height:100%; line-height:1.2 !important; }
-}
-
-/* Mobile bracket positioning: matches form a sideways pyramid. */
+/* Mobile tournament bracket: grouped league + true progressive knockout layout.
+   These rules are mobile-only; DesktopBracket and desktop styles are untouched. */
 @media (max-width: 767px) {
   #tournament .mobile-compact-bracket {
     display:grid !important;
-    grid-template-columns: 1.28fr 1.18fr .95fr .78fr .65fr !important;
-    grid-template-rows: repeat(8, minmax(0, 1fr)) !important;
-    gap:5px !important;
+    grid-template-columns:minmax(0,1.28fr) minmax(0,1.22fr) minmax(0,1fr) minmax(0,.88fr) minmax(0,.72fr) !important;
+    grid-template-rows:24px repeat(8,minmax(0,1fr)) !important;
+    height:370px !important;
     width:100% !important;
-    min-width:0 !important;
-    height:300px !important;
-    align-items:stretch !important;
-  }
-  #tournament .compact-bracket-round { display:contents !important; }
-  #tournament .compact-bracket-label { grid-row:1 !important; align-self:start !important; min-height:18px !important; margin:0 !important; font-size:.4rem !important; }
-  #tournament .compact-groups-column { grid-column:1 !important; }
-  #tournament .compact-group-box { min-height:0 !important; height:100% !important; display:flex !important; flex-direction:column !important; justify-content:center !important; }
-  #tournament .compact-group-0 { grid-column:1 !important; grid-row:2 / 5 !important; }
-  #tournament .compact-group-1 { grid-column:1 !important; grid-row:5 / 9 !important; }
-  #tournament .compact-bracket-round:nth-child(2) { grid-column:2 !important; grid-row:2 / 9 !important; }
-  #tournament .compact-bracket-round:nth-child(3) { grid-column:3 !important; grid-row:2 / 9 !important; }
-  #tournament .compact-bracket-round:nth-child(4) { grid-column:4 !important; grid-row:2 / 9 !important; }
-  #tournament .compact-bracket-round:nth-child(5) { grid-column:5 !important; grid-row:2 / 9 !important; }
-  #tournament .compact-bracket-list { display:contents !important; }
-  #tournament .compact-qf-0 { grid-row:2 / 3 !important; }
-  #tournament .compact-qf-1 { grid-row:3 / 4 !important; }
-  #tournament .compact-qf-2 { grid-row:6 / 7 !important; }
-  #tournament .compact-qf-3 { grid-row:7 / 8 !important; }
-  #tournament .compact-semifinals > div:first-child { grid-row:2 / 4 !important; }
-  #tournament .compact-semifinals > div:last-child { grid-row:6 / 8 !important; }
-  #tournament .compact-finals { display:contents !important; }
-  #tournament .compact-final-match { grid-row:4 / 6 !important; align-self:center !important; }
-  #tournament .compact-trophy-wrap { grid-row:4 / 6 !important; align-self:center !important; min-height:90px !important; }
-  #tournament .compact-bracket-match { height:100% !important; display:flex !important; flex-direction:column !important; justify-content:center !important; }
-  #tournament .compact-bracket-team { min-height:0 !important; flex:1 1 0 !important; }
-  #tournament .compact-bracket-label { white-space:normal !important; }
-  #tournament .compact-group-title { font-size:.4rem !important; }
-}
-@media (max-width: 380px) {
-  #tournament .mobile-compact-bracket { height:280px !important; grid-template-columns:1.25fr 1.15fr .92fr .75fr .62fr !important; gap:3px !important; }
-}
-
-/* FIX: explicit grid item placement for a true compact mobile bracket pyramid */
-@media (max-width: 767px) {
-  #tournament .mobile-compact-bracket {
-    display:grid !important;
-    grid-template-columns:minmax(0,1.18fr) minmax(0,1.05fr) minmax(0,.9fr) minmax(0,.78fr) minmax(0,.68fr) !important;
-    grid-template-rows: 18px repeat(8,minmax(0,1fr)) !important;
-    height: 310px !important;
-    width:100% !important;
-    min-width:0 !important;
     gap:4px !important;
+    min-width:0 !important;
     align-items:stretch !important;
+    position:relative !important;
   }
   #tournament .compact-bracket-round { display:contents !important; }
-  #tournament .compact-bracket-label { grid-row:1 !important; align-self:center !important; min-height:0 !important; margin:0 !important; font-size:clamp(.36rem,1.5vw,.45rem) !important; white-space:nowrap !important; text-align:center; }
+  #tournament .compact-bracket-label {
+    grid-row:1 !important; align-self:center !important; margin:0 !important;
+    min-height:0 !important; text-align:center !important; white-space:nowrap !important;
+    font-size:clamp(5px,1.65vw,8px) !important; letter-spacing:0 !important;
+    line-height:1 !important; color:rgba(255,255,255,.68) !important;
+  }
   #tournament .compact-stage-groups > .compact-bracket-label { grid-column:1 !important; }
   #tournament .compact-stage-quarterfinals > .compact-bracket-label { grid-column:2 !important; }
   #tournament .compact-stage-semifinals > .compact-bracket-label { grid-column:3 !important; }
   #tournament .compact-stage-final > .compact-bracket-label { grid-column:4 !important; }
-  #tournament .compact-stage-champion > .compact-bracket-label { grid-column:5 !important; }
-  #tournament .compact-group-box { display:flex !important; flex-direction:column !important; min-width:0 !important; height:100% !important; margin:0 !important; justify-content:center !important; }
-  #tournament .compact-group-0 { grid-column:1 !important; grid-row:2 / 5 !important; }
-  #tournament .compact-group-1 { grid-column:1 !important; grid-row:5 / 10 !important; }
-  #tournament .compact-group-title { flex:0 0 auto; }
-  #tournament .compact-group-list, #tournament .compact-bracket-list { display:contents !important; }
-  #tournament .compact-group-list .compact-bracket-team { min-height:0 !important; height:auto !important; flex:1 1 0 !important; margin:2px 0 !important; }
-  #tournament .compact-qf-0, #tournament .compact-qf-1, #tournament .compact-qf-2, #tournament .compact-qf-3,
-  #tournament .compact-sf-0, #tournament .compact-sf-1, #tournament .compact-final-match {
-    display:flex !important; min-width:0 !important; align-self:stretch !important;
-  }
-  #tournament .compact-qf-0 { grid-column:2 !important; grid-row:2 / 3 !important; }
-  #tournament .compact-qf-1 { grid-column:2 !important; grid-row:3 / 4 !important; }
-  #tournament .compact-qf-2 { grid-column:2 !important; grid-row:7 / 8 !important; }
-  #tournament .compact-qf-3 { grid-column:2 !important; grid-row:8 / 9 !important; }
-  #tournament .compact-sf-0 { grid-column:3 !important; grid-row:2 / 4 !important; }
-  #tournament .compact-sf-1 { grid-column:3 !important; grid-row:7 / 9 !important; }
-  #tournament .compact-final-match { grid-column:4 !important; grid-row:4 / 7 !important; align-self:center !important; }
-  #tournament .compact-trophy-wrap { grid-column:5 !important; grid-row:4 / 7 !important; align-self:center !important; min-height:0 !important; height:100% !important; max-height:120px; }
-  #tournament .compact-bracket-match { width:100% !important; height:100% !important; min-width:0 !important; display:flex !important; flex-direction:column !important; justify-content:center !important; gap:3px !important; padding:2px !important; }
-  #tournament .compact-bracket-match .compact-bracket-team { min-width:0 !important; min-height:0 !important; flex:1 1 0 !important; height:auto !important; padding:2px !important; font-size:clamp(.32rem,1.4vw,.4rem) !important; line-height:1.05 !important; }
-  #tournament .compact-team-name { overflow-wrap:anywhere !important; }
-  #tournament .compact-trophy-art { width:100% !important; height:auto !important; max-height:65px !important; }
-  #tournament .compact-trophy-wrap span { font-size:clamp(.32rem,1.3vw,.4rem) !important; }
-  #tournament .tournament-brackets { overflow:visible !important; }
-}
-@media (max-width:380px) {
-  #tournament .mobile-compact-bracket { height:300px !important; grid-template-columns:minmax(0,1.15fr) minmax(0,1.03fr) minmax(0,.88fr) minmax(0,.75fr) minmax(0,.65fr) !important; gap:3px !important; }
-}
+  #tournament .compact-stage-champion > .compact-bracket-label { grid-column:5 !important; color:#facc15 !important; }
 
-/* Final correction: explicitly assign every knockout match to its pyramid column and row. */
-@media (max-width: 767px) {
-  #tournament .mobile-compact-bracket {
-    grid-template-columns: minmax(0,1.2fr) minmax(0,1.08fr) minmax(0,.9fr) minmax(0,.78fr) minmax(0,.68fr) !important;
-    grid-template-rows: 18px repeat(8,minmax(0,1fr)) !important;
-    height: 320px !important;
-    gap: 4px !important;
+  #tournament .compact-group-box {
+    min-width:0 !important; height:100% !important; margin:0 !important;
+    display:flex !important; flex-direction:column !important; justify-content:center !important;
+    padding:4px !important; border:1px solid rgba(255,255,255,.13) !important;
+    border-radius:9px !important; background:rgba(255,255,255,.045) !important;
   }
-  #tournament .compact-stage-quarterfinals,
-  #tournament .compact-stage-semifinals,
-  #tournament .compact-stage-final,
-  #tournament .compact-stage-champion { display:contents !important; }
+  #tournament .compact-group-0 { grid-column:1 !important; grid-row:2 / 6 !important; }
+  #tournament .compact-group-1 { grid-column:1 !important; grid-row:6 / 10 !important; }
+  #tournament .compact-group-title {
+    flex:0 0 auto !important; text-align:center !important; font-size:clamp(5px,1.6vw,8px) !important;
+    line-height:1 !important; margin:0 0 4px !important; color:#ff43bb !important;
+  }
+  #tournament .compact-group-list { display:flex !important; flex-direction:column !important; gap:3px !important; min-height:0 !important; }
+  #tournament .compact-group-list .compact-bracket-team {
+    flex:1 1 0 !important; min-height:0 !important; height:auto !important;
+    margin:0 !important; padding:3px !important; border:1px solid rgba(255,255,255,.09) !important;
+    border-radius:5px !important; background:rgba(255,255,255,.035) !important;
+  }
+
+  #tournament .compact-bracket-list { display:contents !important; }
+  #tournament .compact-qf, #tournament .compact-sf, #tournament .compact-final-match {
+    min-width:0 !important; display:flex !important; align-self:stretch !important; position:relative !important;
+  }
   #tournament .compact-qf-0 { grid-column:2 !important; grid-row:2 / 4 !important; }
   #tournament .compact-qf-1 { grid-column:2 !important; grid-row:4 / 6 !important; }
   #tournament .compact-qf-2 { grid-column:2 !important; grid-row:6 / 8 !important; }
   #tournament .compact-qf-3 { grid-column:2 !important; grid-row:8 / 10 !important; }
   #tournament .compact-sf-0 { grid-column:3 !important; grid-row:3 / 5 !important; }
   #tournament .compact-sf-1 { grid-column:3 !important; grid-row:7 / 9 !important; }
-  #tournament .compact-final-match { grid-column:4 !important; grid-row:5 / 7 !important; }
-  #tournament .compact-trophy-wrap { grid-column:5 !important; grid-row:5 / 7 !important; }
-  #tournament .compact-group-0 { grid-column:1 !important; grid-row:2 / 6 !important; }
-  #tournament .compact-group-1 { grid-column:1 !important; grid-row:6 / 10 !important; }
-  #tournament .compact-qf-0,
-  #tournament .compact-qf-1,
-  #tournament .compact-qf-2,
-  #tournament .compact-qf-3,
-  #tournament .compact-sf-0,
-  #tournament .compact-sf-1,
-  #tournament .compact-final-match { min-width:0 !important; display:flex !important; align-self:stretch !important; }
-  #tournament .compact-bracket-match { height:100% !important; min-height:0 !important; }
-  #tournament .compact-bracket-match .compact-bracket-team { align-items:center !important; justify-content:flex-start !important; overflow-wrap:anywhere !important; }
-  #tournament .compact-sf-0,
-  #tournament .compact-sf-1 { align-self:center !important; }
-  #tournament .compact-final-match { align-self:center !important; }
-  #tournament .compact-trophy-wrap { align-self:center !important; }
+  #tournament .compact-final-match { grid-column:4 !important; grid-row:5 / 7 !important; align-self:center !important; }
+  #tournament .compact-trophy-wrap { grid-column:5 !important; grid-row:5 / 7 !important; align-self:center !important; height:100% !important; max-height:125px !important; min-height:0 !important; }
+  #tournament .compact-bracket-match {
+    width:100% !important; height:100% !important; min-width:0 !important; min-height:0 !important;
+    display:flex !important; flex-direction:column !important; justify-content:center !important;
+    gap:3px !important; padding:3px !important; border-radius:7px !important;
+    border:1px solid rgba(255,255,255,.12) !important; background:rgba(255,255,255,.055) !important;
+  }
+  #tournament .compact-bracket-match.is-highlight { border-color:rgba(255,45,190,.65) !important; background:rgba(210,30,155,.15) !important; }
+  #tournament .compact-bracket-match .compact-bracket-team {
+    min-width:0 !important; min-height:0 !important; height:auto !important; flex:1 1 0 !important;
+    display:flex !important; align-items:center !important; gap:3px !important;
+    padding:2px !important; border:0 !important; background:transparent !important;
+    font-size:clamp(5px,1.55vw,7px) !important; line-height:1.05 !important;
+  }
+  #tournament .compact-team-dot { width:4px !important; height:4px !important; flex:0 0 4px !important; margin:0 !important; }
+  #tournament .compact-team-name { display:block !important; min-width:0 !important; overflow-wrap:anywhere !important; }
+  /* Connector elbows from each pair of quarterfinals into a semifinal. */
+  #tournament .compact-qf-0::after, #tournament .compact-qf-1::after,
+  #tournament .compact-qf-2::after, #tournament .compact-qf-3::after {
+    content:""; position:absolute; right:-5px; width:5px; height:1px; background:#ec38b4; opacity:.65;
+  }
+  #tournament .compact-qf-0::after, #tournament .compact-qf-2::after { top:50%; }
+  #tournament .compact-qf-1::after, #tournament .compact-qf-3::after { top:50%; }
+  #tournament .compact-sf-0::before, #tournament .compact-sf-1::before {
+    content:""; position:absolute; left:-4px; top:50%; width:4px; height:1px; background:#ec38b4; opacity:.65;
+  }
+  #tournament .compact-final-match::before, #tournament .compact-final-match::after {
+    content:""; position:absolute; left:-4px; width:4px; height:1px; background:#ec38b4; opacity:.65;
+  }
+  #tournament .compact-final-match::before { top:25%; }
+  #tournament .compact-final-match::after { bottom:25%; }
+  #tournament .compact-trophy-wrap {
+    display:flex !important; flex-direction:column !important; align-items:center !important; justify-content:center !important;
+    padding:3px !important; border:1px solid rgba(250,204,21,.28) !important; border-radius:8px !important;
+    background:radial-gradient(circle at center,rgba(111,35,175,.22),rgba(10,5,22,.92)) !important;
+  }
+  #tournament .compact-trophy-art { width:100% !important; height:auto !important; max-height:65px !important; }
+  #tournament .compact-trophy-wrap span { font-size:clamp(5px,1.5vw,7px) !important; text-align:center !important; line-height:1.1 !important; }
+  #tournament .tournament-brackets { overflow:visible !important; }
 }
 @media (max-width:380px) {
-  #tournament .mobile-compact-bracket { height:310px !important; }
+  #tournament .mobile-compact-bracket { height:350px !important; gap:3px !important; grid-template-columns:minmax(0,1.22fr) minmax(0,1.16fr) minmax(0,.95fr) minmax(0,.82fr) minmax(0,.68fr) !important; }
 }
