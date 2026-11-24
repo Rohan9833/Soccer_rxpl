@@ -25,7 +25,7 @@ export default function AppShowcase() {
   const [[index, direction], setState] = useState([0, 0]);
   const reduce = useReducedMotion();
   const tabRefs = useRef([]);
-  const mobileTabsRef = useRef(null);
+  const mobileTabsRef = useRef(null);\n  const mobileSwipeStart = useRef(null);
   const screen = APP_SCREENS[index];
 
   const go = useCallback((next) => {
@@ -82,20 +82,35 @@ export default function AppShowcase() {
             <p>A simple, mobile-first experience for your field force to perform, compete, and grow.</p>
           </div>
           <div className="app-mobile-showcase-grid">
-            <motion.div
+            <div
               className="app-mobile-phone"
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.22}
-              dragMomentum={false}
-              whileDrag={{ cursor: 'grabbing' }}
-              onDragEnd={(_, info) => {
-                if (info.offset.x < -45 || info.velocity.x < -350) go(index + 1);
-                else if (info.offset.x > 45 || info.velocity.x > 350) go(index - 1);
+              onTouchStart={(event) => {
+                mobileSwipeStart.current = event.changedTouches[0]?.clientX ?? null;
+              }}
+              onTouchEnd={(event) => {
+                const startX = mobileSwipeStart.current;
+                const endX = event.changedTouches[0]?.clientX;
+                mobileSwipeStart.current = null;
+                if (startX == null || endX == null) return;
+                const delta = endX - startX;
+                if (Math.abs(delta) > 45) go(delta < 0 ? index + 1 : index - 1);
               }}
             >
-              <IPhoneMockup src={screen.src} alt={`Sales Soccer app: ${screen.title} screen`} priority={index === 0} />
-            </motion.div>
+              <AnimatePresence mode="wait" initial={false} custom={direction}>
+                <motion.div
+                  key={screen.id}
+                  custom={direction}
+                  variants={variants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                  className="w-full"
+                >
+                  <IPhoneMockup src={screen.src} alt={`Sales Soccer app: ${screen.title} screen`} priority={index === 0} />
+                </motion.div>
+              </AnimatePresence>
+            </div>
             <div className="app-mobile-right-column">
               <div className="app-mobile-feature-list" aria-label="Sales Soccer app features">
                 <div><ClipboardList /><span>Log Field Activities</span></div>
