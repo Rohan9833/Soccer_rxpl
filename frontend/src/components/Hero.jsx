@@ -63,7 +63,7 @@ export default function Hero({ ready = true }) {
             custom={1}
             className="hero-headline headline mt-5 text-[clamp(3.1rem,8.4vw,6.6rem)]"
           >
-            Make Your Brand Drive Feel Like{' '}
+            Make Your <br className="mobile-hero-break" />Brand Drive <br className="mobile-hero-break" />Feel Like <br className="mobile-hero-break" />
             <span className="text-gradient pr-2">Match Day.</span>
           </motion.h1>
 
