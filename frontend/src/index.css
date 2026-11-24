@@ -230,3 +230,42 @@
   #game .mobile-performance-stat span { font-size: .48rem; }
   #game .pitch-zone-label { font-size: .66rem !important; }
 }
+
+/* Mobile compact tournament flow matching the supplied visual reference. */
+@media (max-width: 767px) {
+  #tournament { padding-block: 3.25rem !important; overflow: hidden; }
+  #tournament .container-x { padding-inline: 12px !important; }
+  #tournament .container-x > div:first-of-type { max-width: 100% !important; text-align: center; }
+  #tournament .eyebrow { font-size: .6rem !important; letter-spacing: .28em !important; }
+  #tournament h2 { margin-top: 10px !important; font-size: clamp(1.65rem, 7.5vw, 2.15rem) !important; line-height: 1 !important; }
+  #tournament .container-x > div:first-of-type > p:last-child { margin-top: 11px !important; font-size: .72rem !important; line-height: 1.3 !important; }
+  #tournament .tournament-brackets { margin-top: 1.35rem !important; }
+  #tournament .mobile-compact-bracket { display:grid !important; grid-template-columns: 1.08fr 1.15fr 1fr .92fr .9fr; gap: 5px; align-items:stretch; width:100%; }
+  #tournament .compact-bracket-round { min-width:0; }
+  #tournament .compact-bracket-label { min-height: 23px; margin-bottom: 7px; display:flex; align-items:center; justify-content:center; text-align:center; font-size: .43rem; line-height:1; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:rgba(255,255,255,.65); white-space:nowrap; }
+  #tournament .compact-champion .compact-bracket-label { color:#facc15; }
+  #tournament .compact-bracket-list { display:flex; flex-direction:column; gap:6px; }
+  #tournament .compact-bracket-team { display:flex; align-items:center; gap:3px; min-width:0; height:24px; padding:3px 4px; border-radius:6px; background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.07); color:rgba(255,255,255,.78); font-size:.42rem; font-weight:600; line-height:1; white-space:nowrap; overflow:hidden; }
+  #tournament .compact-team-dot { width:6px; height:6px; flex:0 0 6px; border-radius:50%; box-shadow:0 0 6px currentColor; }
+  #tournament .compact-bracket-match { display:flex; flex-direction:column; gap:3px; padding:3px; border-radius:7px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); }
+  #tournament .compact-bracket-match .compact-bracket-team { height:20px; border:0; background:rgba(255,255,255,.035); padding:2px; }
+  #tournament .compact-bracket-match.is-highlight { border-color:rgba(255,62,165,.55); background:rgba(255,62,165,.15); box-shadow:0 0 12px rgba(255,62,165,.16); }
+  #tournament .compact-bracket-list > .compact-bracket-match { margin-bottom:3px; }
+  #tournament .compact-semifinals { margin-top:12px; gap:10px; }
+  #tournament .compact-finals { margin-top:26px; }
+  #tournament .compact-trophy-wrap { min-height:130px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:4px; border-radius:9px; background:radial-gradient(ellipse at center,#401568 0%,#170b27 65%,rgba(8,5,16,.5) 100%); border:1px solid rgba(250,204,21,.2); }
+  #tournament .compact-trophy-art { width:100%; max-width:58px; height:65px; object-fit:contain; }
+  #tournament .compact-trophy-wrap span { margin-top:5px; font-size:.42rem; font-weight:800; line-height:1.1; text-align:center; text-transform:uppercase; color:#fef3c7; }
+  #tournament .lg\\:hidden { display:block !important; }
+  #tournament .mobile-compact-bracket { display:grid !important; }
+  #tournament ol.space-y-2 { display:none !important; }
+  #tournament .container-x > p:last-child { display:none !important; }
+}
+@media (max-width: 380px) {
+  #tournament .container-x { padding-inline:9px !important; }
+  #tournament .mobile-compact-bracket { gap:4px; grid-template-columns: 1.05fr 1.15fr 1fr .9fr .88fr; }
+  #tournament .compact-bracket-label { font-size:.39rem; letter-spacing:0; }
+  #tournament .compact-bracket-team { font-size:.38rem; padding-inline:3px; }
+  #tournament .compact-bracket-match .compact-bracket-team { font-size:.36rem; }
+  #tournament .compact-trophy-art { max-width:50px; }
+}
