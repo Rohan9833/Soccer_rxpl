@@ -304,3 +304,10 @@
   #tournament .compact-group-box .compact-team-dot { margin-top:0 !important; align-self:center !important; }
   #tournament .compact-group-box .compact-team-name { display:flex !important; align-items:center !important; min-height:100%; line-height:1.2 !important; }
 }
+
+/* Vertically center team labels in knockout-stage cards as well. */
+@media (max-width: 767px) {
+  #tournament .compact-bracket-match .compact-bracket-team { align-items:center !important; }
+  #tournament .compact-bracket-match .compact-team-dot { margin-top:0 !important; align-self:center !important; }
+  #tournament .compact-bracket-match .compact-team-name { display:flex !important; align-items:center !important; min-height:100%; line-height:1.2 !important; }
+}
