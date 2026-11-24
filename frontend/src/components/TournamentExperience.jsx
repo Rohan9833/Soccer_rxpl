@@ -8,17 +8,14 @@ const allTeams = BRACKET.league.flat();
 const colorFor = (team) => BADGE_COLORS[allTeams.indexOf(team) % BADGE_COLORS.length];
 
 function Team({ name }) {
-  const initials = name
-    .split(' ')
-    .map((w) => w[0])
-    .join('');
+  const initials = name.split(' ').map((w) => w[0]).join('');
   return (
     <div className="flex items-center gap-2.5">
-      <span className="relative flex h-7 w-7 shrink-0 items-center justify-center">
-        <Shield size={28} strokeWidth={1.5} style={{ color: colorFor(name), fill: `${colorFor(name)}33` }} />
-        <span className="absolute font-display text-[10px] font-extrabold">{initials}</span>
+      <span className="relative flex h-8 w-8 shrink-0 items-center justify-center">
+        <Shield size={32} strokeWidth={1.5} style={{ color: colorFor(name), fill: `${colorFor(name)}33` }} />
+        <span className="absolute font-display text-[11px] font-extrabold">{initials}</span>
       </span>
-      <span className="truncate text-sm font-semibold text-white/90">{name}</span>
+      <span className="whitespace-nowrap text-[19px] font-semibold text-white/90">{name}</span>
     </div>
   );
 }
@@ -26,16 +23,16 @@ function Team({ name }) {
 function MatchCard({ teams, highlight = false }) {
   return (
     <div
-      className={`relative rounded-2xl border p-3 backdrop-blur-xl ${
+      className={`relative rounded-2xl border p-4 mt-5 backdrop-blur-xl ${
         highlight
           ? 'border-pink-electric/60 bg-gradient-to-br from-magenta/25 to-violet-royal/30 shadow-glow'
           : 'border-white/10 bg-white/[0.05]'
       }`}
     >
       <Team name={teams[0]} />
-      <div className="my-1.5 flex items-center gap-2 pl-1">
+      <div className="my-3 flex items-center gap-2 pl-1">
         <span className="h-px flex-1 bg-white/10" />
-        <span className="font-display text-xs font-bold uppercase tracking-widest text-pink-electric">vs</span>
+        <span className="font-display text-[12px] font-bold uppercase tracking-widest text-pink-electric">vs</span>
         <span className="h-px flex-1 bg-white/10" />
       </div>
       <Team name={teams[1]} />
@@ -45,9 +42,9 @@ function MatchCard({ teams, highlight = false }) {
 
 function GroupCard({ teams, label }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-3 backdrop-blur-xl">
-      <p className="mb-2 font-display text-xs font-bold uppercase tracking-[0.2em] text-white/50">{label}</p>
-      <div className="space-y-2">
+    <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-4 backdrop-blur-xl">
+      <p className="mb-3 text-center font-display text-[13px] font-bold uppercase tracking-[0.2em] text-white/50">{label}</p>
+      <div className="space-y-3.5">
         {teams.map((t) => (
           <Team key={t} name={t} />
         ))}
@@ -56,67 +53,65 @@ function GroupCard({ teams, label }) {
   );
 }
 
-// Bracket connector: joins the vertical centres of two stacked children and
-// draws a line out towards the next round.
-function Pair({ children }) {
+function Trophy() {
   return (
-    <div className="relative flex h-full flex-col justify-around">
-      {children}
-      <span aria-hidden="true" className="absolute -right-6 bottom-1/4 top-1/4 w-6 rounded-r-xl border-y border-r border-pink-electric/50" />
-      <span aria-hidden="true" className="absolute -right-12 top-1/2 h-px w-6 bg-pink-electric/50" />
-    </div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="relative flex flex-col items-center justify-center overflow-hidden rounded-[28px] border border-amber-200/30 bg-[radial-gradient(120%_90%_at_50%_30%,#4b1381_0%,#1b0f33_55%,#0a0614_100%)] shadow-[0_0_80px_-20px_rgba(251,191,36,0.6)] w-full h-[300px]"
+    >
+      <TrophyArt className="h-48 w-auto" />
+      <p className="headline mt-2 text-center text-2xl text-amber-100">Lift the trophy</p>
+    </motion.div>
   );
-}
-
-function Stub() {
-  return <span aria-hidden="true" className="absolute -right-12 top-1/2 h-px w-12 bg-pink-electric/50" />;
 }
 
 const STAGES = ['League Matches', 'Quarterfinals', 'Semifinals', 'Finals'];
 
-function DesktopBracket() {
+// Shared bracket structure used for both mobile (scaled) and desktop
+function BracketLayout() {
   return (
-    <div className="hidden lg:block">
-      <div className="grid grid-cols-[1fr_1fr_1fr_1fr_0.9fr] gap-12">
+    <div className="flex flex-col w-[1100px]">
+      {/* Labels */}
+      <div className="grid grid-cols-[1fr_1fr_1fr_1fr_0.9fr] gap-8 mb-6">
         {STAGES.map((s) => (
-          <p key={s} className="text-center font-display text-lg font-bold uppercase tracking-[0.2em] text-white/70">
+          <p key={s} className="text-center font-display text-[25px] font-bold uppercase tracking-[0.2em] text-white/70">
             {s}
           </p>
         ))}
-        <p className="text-center font-display text-lg font-bold uppercase tracking-[0.2em] text-amber-200">Champions</p>
+        <p className="text-center font-display text-[28px] font-light uppercase tracking-[0.2em] text-amber-200">Champions</p>
       </div>
 
-      <div className="mt-6 grid h-[600px] grid-cols-[1fr_1fr_1fr_1fr_0.9fr] gap-12">
+      {/* Bracket Body */}
+      <div className="grid h-[520px] grid-cols-[1fr_1fr_1fr_1fr_0.9fr] gap-4">
         {/* League */}
         <div className="flex flex-col justify-around">
           {BRACKET.league.map((g, i) => (
-            <div key={i} className="relative">
-              <GroupCard teams={g} label={`Group ${String.fromCharCode(65 + i)}`} />
-              <Stub />
-            </div>
+            <GroupCard key={i} teams={g} label={`Group ${String.fromCharCode(65 + i)}`} />
           ))}
         </div>
+        
         {/* QF */}
-        <div className="flex flex-col">
-          {[0, 2].map((i) => (
-            <div key={i} className="h-1/2">
-              <Pair>
-                <MatchCard teams={BRACKET.quarterfinals[i]} />
-                <MatchCard teams={BRACKET.quarterfinals[i + 1]} />
-              </Pair>
-            </div>
+        <div className="flex flex-col justify-around">
+          {BRACKET.quarterfinals.map((m, i) => (
+            <MatchCard key={i} teams={m} />
           ))}
         </div>
+        
         {/* SF */}
-        <Pair>
-          <MatchCard teams={BRACKET.semifinals[0]} />
-          <MatchCard teams={BRACKET.semifinals[1]} />
-        </Pair>
-        {/* Final */}
-        <div className="relative flex flex-col justify-center">
-          <MatchCard teams={BRACKET.final} highlight />
-          <Stub />
+        <div className="flex flex-col justify-around">
+          {BRACKET.semifinals.map((m, i) => (
+            <MatchCard key={i} teams={m} />
+          ))}
         </div>
+
+        {/* Final */}
+        <div className="flex flex-col justify-center">
+          <MatchCard teams={BRACKET.final} highlight />
+        </div>
+
         {/* Trophy */}
         <div className="flex items-center justify-center">
           <Trophy />
@@ -126,135 +121,26 @@ function DesktopBracket() {
   );
 }
 
-function Trophy({ small = false }) {
+function DesktopBracket() {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.85 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className={`relative flex flex-col items-center justify-center overflow-hidden rounded-[28px] border border-amber-200/30 bg-[radial-gradient(120%_90%_at_50%_30%,#4b1381_0%,#1b0f33_55%,#0a0614_100%)] shadow-[0_0_80px_-20px_rgba(251,191,36,0.6)] ${
-        small ? 'mx-auto h-80 w-60' : 'h-[420px] w-full'
-      }`}
-    >
-      <TrophyArt className={small ? 'h-56 w-auto' : 'h-72 w-auto'} />
-      <p className="headline mt-2 text-center text-2xl text-amber-100">Lift the trophy</p>
-    </motion.div>
-  );
-}
-
-function CompactTeam({ name, colorIndex = 0 }) {
-  return <div className="compact-bracket-team"><span className="compact-team-dot" style={{ background: BADGE_COLORS[colorIndex % BADGE_COLORS.length] }} /><span className="compact-team-name">{name}</span></div>;
-}
-
-function CompactMatch({ teams, highlight = false }) {
-  return <div className={`compact-bracket-match ${highlight ? 'is-highlight' : ''}`}>
-    {teams.map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
-  </div>;
-}
-
-function MobileCompactBracket() {
-  return (
-    <div className="mobile-compact-bracket lg:hidden">
-      <div className="compact-stage-groups compact-bracket-round">
-        <p className="compact-bracket-label">League</p>
-        {BRACKET.league.map((group, i) => (
-          <div className={`compact-group-box compact-group-${i}`} key={i}>
-            <p className="compact-group-title">Group {String.fromCharCode(65 + i)}</p>
-            <div className="compact-group-list">
-              {group.map((team) => <CompactTeam key={team} name={team} colorIndex={allTeams.indexOf(team)} />)}
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="compact-stage-quarterfinals compact-bracket-round">
-        <p className="compact-bracket-label">Quarterfinals</p>
-        <div className="compact-bracket-list">
-          {BRACKET.quarterfinals.map((match, i) => (
-            <div className={`compact-qf compact-qf-${i}`} key={i}><CompactMatch teams={match} /></div>
-          ))}
-        </div>
-      </div>
-      <div className="compact-stage-semifinals compact-bracket-round">
-        <p className="compact-bracket-label">Semifinals</p>
-        <div className="compact-bracket-list compact-semifinals">
-          {BRACKET.semifinals.map((match, i) => (
-            <div className={`compact-sf compact-sf-${i}`} key={i}><CompactMatch teams={match} /></div>
-          ))}
-        </div>
-      </div>
-      <div className="compact-stage-final compact-bracket-round">
-        <p className="compact-bracket-label">Final</p>
-        <div className="compact-final-match"><CompactMatch teams={BRACKET.final} highlight /></div>
-      </div>
-      <div className="compact-stage-champion compact-bracket-round">
-        <p className="compact-bracket-label">Champion</p>
-        <div className="compact-trophy-wrap"><TrophyArt className="compact-trophy-art" /><span>Lift the trophy</span></div>
-      </div>
+    <div className="hidden lg:flex justify-center">
+      <BracketLayout />
     </div>
   );
 }
 
 function MobileBracket() {
-  const stages = [
-    {
-      title: 'League Matches',
-      body: (
-        <div className="grid gap-3 sm:grid-cols-2">
-          {BRACKET.league.map((g, i) => (
-            <GroupCard key={i} teams={g} label={`Group ${String.fromCharCode(65 + i)}`} />
-          ))}
-        </div>
-      ),
-    },
-    {
-      title: 'Quarterfinals',
-      body: (
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {BRACKET.quarterfinals.map((m, i) => (
-            <MatchCard key={i} teams={m} />
-          ))}
-        </div>
-      ),
-    },
-    {
-      title: 'Semifinals',
-      body: (
-        <div className="grid gap-3 sm:grid-cols-2">
-          {BRACKET.semifinals.map((m, i) => (
-            <MatchCard key={i} teams={m} />
-          ))}
-        </div>
-      ),
-    },
-    { title: 'Finals', body: <MatchCard teams={BRACKET.final} highlight /> },
-  ];
+  // We render the exact desktop layout but scale it down to fit a mobile screen.
+  // 1100px scaled by 0.34 = 374px, which fits perfectly on a 375px phone.
   return (
-    <ol className="space-y-2 lg:hidden">
-      {stages.map((s, i) => (
-        <motion.li
-          key={s.title}
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="glass p-5">
-            <p className="mb-4 flex items-center gap-3 font-display text-lg font-bold uppercase tracking-[0.2em]">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-gradient text-sm">{i + 1}</span>
-              {s.title}
-            </p>
-            {s.body}
-          </div>
-          <div className="flex justify-center py-1 text-pink-electric" aria-hidden="true">
-            <ChevronDown size={26} />
-          </div>
-        </motion.li>
-      ))}
-      <li>
-        <Trophy small />
-      </li>
-    </ol>
+    <div className="lg:hidden w-full flex justify-center overflow-hidden py-2">
+      <div 
+        className="origin-top flex justify-center w-full"
+        style={{ transform: 'scale(0.34)', transformOrigin: 'top center' }}
+      >
+        <BracketLayout />
+      </div>
+    </div>
   );
 }
 
@@ -277,7 +163,6 @@ export default function TournamentExperience() {
 
         <div className="tournament-brackets mt-14">
           <DesktopBracket />
-          <MobileCompactBracket />
           <MobileBracket />
         </div>
 
