@@ -167,19 +167,19 @@ function MobileCompactBracket() {
           </div>
         ))}
       </div>
-      <div className="compact-bracket-round">
+      <div className="compact-bracket-round compact-stage-quarterfinals">
         <p className="compact-bracket-label">Quarterfinals</p>
         <div className="compact-bracket-list">
           {BRACKET.quarterfinals.map((match, i) => <div className={`compact-qf-${i}`} key={i}><CompactMatch teams={match} /></div>)}
         </div>
       </div>
-      <div className="compact-bracket-round">
+      <div className="compact-bracket-round compact-stage-semifinals">
         <p className="compact-bracket-label">Semifinals</p>
         <div className="compact-bracket-list compact-semifinals">
           {BRACKET.semifinals.map((match, i) => <div className={`compact-sf-${i}`} key={i}><CompactMatch teams={match} /></div>)}
         </div>
       </div>
-      <div className="compact-bracket-round">
+      <div className="compact-bracket-round compact-stage-final">
         <p className="compact-bracket-label">Final</p>
         <div className="compact-bracket-list compact-finals">
           <div className="compact-final-match"><CompactMatch teams={BRACKET.final} highlight /></div>
