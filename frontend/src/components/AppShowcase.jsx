@@ -25,7 +25,7 @@ export default function AppShowcase() {
   const [[index, direction], setState] = useState([0, 0]);
   const reduce = useReducedMotion();
   const tabRefs = useRef([]);
-  const mobileTabsRef = useRef(null);\n  const mobileSwipeStart = useRef(null);
+  const mobileTabsRef = useRef(null);  const mobileSwipeStart = useRef(null);
   const screen = APP_SCREENS[index];
 
   const go = useCallback((next) => {
