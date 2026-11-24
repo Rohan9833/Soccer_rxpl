@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-night-950 font-sans text-white antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: rgba(255, 62, 165, 0.45);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid #ff3ea5;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-display text-sm font-bold uppercase tracking-[0.28em] text-pink-electric;
+  }
+  .headline {
+    @apply font-display font-extrabold uppercase italic leading-[0.92] tracking-tight;
+  }
+  .glass {
+    @apply rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 20px 50px -30px rgba(0, 0, 0, 0.8);
+  }
+  .text-gradient {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-brand-gradient px-7 py-3.5 font-display text-lg font-bold uppercase tracking-wider text-white shadow-glow transition duration-300 hover:brightness-110 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 font-display text-lg font-bold uppercase tracking-wider text-white backdrop-blur transition duration-300 hover:border-pink-electric/60 hover:bg-white/10 active:scale-[0.98];
+  }
+  .section {
+    @apply relative overflow-hidden py-24 sm:py-28 lg:py-32;
+  }
+}
+
+/* Floodlight glow used behind sections */
+.floodlight {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Subtle pitch stripes */
+.turf-stripes {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.025) 0 60px,
+    rgba(255, 255, 255, 0) 60px 120px
+  );
+}
+
+/* Broadcast ticker */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-track {
+  animation: ticker 38s linear infinite;
+}
+
+/* Ball travelling across the pitch */
+@keyframes ball-run {
+  0% { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+.pulse-ring {
+  animation: pulse-ring 2.2s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ticker-track,
+  .pulse-ring {
+    animation: none !important;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
