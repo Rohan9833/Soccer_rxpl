@@ -133,7 +133,7 @@ function MobileBracket() {
   // We render the exact desktop layout but scale it down to fit a mobile screen.
   // 1100px scaled by 0.34 = 374px, which fits perfectly on a 375px phone.
   return (
-    <div className="lg:hidden w-full flex justify-center overflow-hidden py-2">
+    <div className="lg:hidden h-[250px] w-full flex justify-center overflow-hidden py-2">
       <div 
         className="origin-top flex justify-center w-full"
         style={{ transform: 'scale(0.34)', transformOrigin: 'top center' }}

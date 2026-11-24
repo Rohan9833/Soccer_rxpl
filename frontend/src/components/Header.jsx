@@ -42,7 +42,7 @@ export default function Header({ logoVisible = true }) {
         scrolled || open ? 'shadow-[0_10px_30px_-12px_rgba(42,11,74,0.55)]' : ''
       }`}
     >
-      <div className="container-x flex h-[72px] items-center justify-between gap-6">
+      <div className="container-x flex h-[72px] z-10 items-center justify-between gap-6">
         <a href="#top" aria-label="Sales Soccer: back to top" onClick={() => setOpen(false)}>
           <Logo
             plain

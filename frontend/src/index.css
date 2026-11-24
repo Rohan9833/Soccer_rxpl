@@ -35,7 +35,9 @@
   }
   .glass {
     @apply rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 20px 50px -30px rgba(0, 0, 0, 0.8);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 20px 50px -30px rgba(0, 0, 0, 0.8);
   }
   .text-gradient {
     @apply bg-brand-gradient bg-clip-text text-transparent;
@@ -73,8 +75,12 @@
 
 /* Broadcast ticker */
 @keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 .ticker-track {
   animation: ticker 38s linear infinite;
@@ -82,29 +88,44 @@
 
 /* Ball travelling across the pitch */
 @keyframes ball-run {
-  0% { offset-distance: 0%; }
-  100% { offset-distance: 100%; }
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
 }
 
 @keyframes pulse-ring {
-  0% { transform: scale(0.8); opacity: 0.8; }
-  100% { transform: scale(2.2); opacity: 0; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
 }
 .pulse-ring {
   animation: pulse-ring 2.2s ease-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
   .ticker-track,
   .pulse-ring {
     animation: none !important;
   }
 }
 
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { scrollbar-width: none; }
-
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
 
 /* Desktop section-height tuning: mobile/tablet styles remain unchanged. */
 @media (min-width: 1024px) {
@@ -127,219 +148,917 @@
     font-size: clamp(0.92rem, 1.9vh, 1.08rem);
     line-height: 1.5;
   }
-  main > section .container-x { row-gap: clamp(1.25rem, 3vh, 2.5rem); }
-  main > section .glass { border-radius: 1.25rem; }
-  main > section article.glass { padding: clamp(1rem, 2.6vh, 1.75rem) !important; }
-  main > section .mt-14 { margin-top: clamp(1.25rem, 3vh, 2.5rem) !important; }
-  main > section .mt-10 { margin-top: clamp(1rem, 2.5vh, 2rem) !important; }
-  main > section .mt-9 { margin-top: clamp(0.9rem, 2.3vh, 1.75rem) !important; }
-  main > section .mt-8 { margin-top: clamp(0.8rem, 2vh, 1.5rem) !important; }
-  main > section .mt-6 { margin-top: clamp(0.6rem, 1.7vh, 1.25rem) !important; }
-  main > section .mt-5 { margin-top: clamp(0.5rem, 1.5vh, 1rem) !important; }
-  main > section .mt-4 { margin-top: clamp(0.45rem, 1.3vh, 0.9rem) !important; }
+  main > section .container-x {
+    row-gap: clamp(1.25rem, 3vh, 2.5rem);
+  }
+  main > section .glass {
+    border-radius: 1.25rem;
+  }
+  main > section article.glass {
+    padding: clamp(1rem, 2.6vh, 1.75rem) !important;
+  }
+  main > section .mt-14 {
+    margin-top: clamp(1.25rem, 3vh, 2.5rem) !important;
+  }
+  main > section .mt-10 {
+    margin-top: clamp(1rem, 2.5vh, 2rem) !important;
+  }
+  main > section .mt-9 {
+    margin-top: clamp(0.9rem, 2.3vh, 1.75rem) !important;
+  }
+  main > section .mt-8 {
+    margin-top: clamp(0.8rem, 2vh, 1.5rem) !important;
+  }
+  main > section .mt-6 {
+    margin-top: clamp(0.6rem, 1.7vh, 1.25rem) !important;
+  }
+  main > section .mt-5 {
+    margin-top: clamp(0.5rem, 1.5vh, 1rem) !important;
+  }
+  main > section .mt-4 {
+    margin-top: clamp(0.45rem, 1.3vh, 0.9rem) !important;
+  }
   #top .container-x {
     min-height: calc(100svh - 72px) !important;
     padding-block: clamp(1.25rem, 3.5vh, 2.5rem) !important;
   }
-  #top h1 { font-size: clamp(2.8rem, 8vh, 5.8rem) !important; line-height: 0.9 !important; }
-  #top .container-x > div:last-child { max-width: clamp(250px, 38vh, 340px) !important; }
-  #demo .glass { padding: clamp(1.25rem, 3vh, 2rem) !important; }
-  #demo input, #demo textarea { padding-block: clamp(0.55rem, 1.3vh, 0.8rem) !important; }
-  #demo form .grid { gap: clamp(0.6rem, 1.5vh, 1rem) !important; }
+  #top h1 {
+    font-size: clamp(2.8rem, 8vh, 5.8rem) !important;
+    line-height: 0.9 !important;
+  }
+  #top .container-x > div:last-child {
+    max-width: clamp(250px, 38vh, 340px) !important;
+  }
+  #demo .glass {
+    padding: clamp(1.25rem, 3vh, 2rem) !important;
+  }
+  #demo input,
+  #demo textarea {
+    padding-block: clamp(0.55rem, 1.3vh, 0.8rem) !important;
+  }
+  #demo form .grid {
+    gap: clamp(0.6rem, 1.5vh, 1rem) !important;
+  }
 }
 
 /* Mobile hero composition: desktop styles are intentionally untouched. */
 @media (max-width: 767px) {
   /* Disable the viewport-based section sizing on mobile; sections use natural content height. */
-  main > section:not(#top) { height: auto !important; min-height: 0 !important; padding-block: 6rem !important; }
-  header { background: rgba(5, 3, 10, 0.92) !important; border-color: rgba(255,255,255,.08) !important; backdrop-filter: blur(16px); }
-  header .container-x { height: 60px !important; }
-  header [data-header-logo] { height: 36px !important; }
-  header button[aria-controls="mobile-menu"] { color: white !important; border-color: rgba(255,255,255,.18) !important; background: rgba(255,255,255,.07) !important; }
-  header #mobile-menu { background: #080511 !important; }
-  header #mobile-menu a { color: white !important; border-color: rgba(255,255,255,.12) !important; }
-  #top { padding-top: 60px !important; }
-  #top .hero-layout { display: block !important; position: relative; min-height: 450px !important; padding-top: 22px !important; padding-bottom: 12px !important; }
-  #top .hero-eyebrow { display: none !important; }
-  #top .mobile-hero-break { display: block; }
-  #top .hero-headline { position: relative; z-index: 2; width: 59%; max-width: none; margin-top: 0 !important; font-size: clamp(2.05rem, 9.2vw, 2.65rem) !important; line-height: .91 !important; letter-spacing: -.04em !important; }
-  #top .hero-device { position: absolute !important; z-index: 1; top: 44px; right: 0; width: 42% !important; max-width: 160px !important; margin: 0 !important; }
-  #top .hero-device > div:first-child { filter: drop-shadow(0 12px 25px rgba(255, 62, 165, .18)); }
-  #top .hero-description { position: relative; z-index: 2; margin-top: 14px !important; width: 60%; max-width: none !important; font-size: .82rem !important; line-height: 1.3 !important; }
-  #top .hero-actions { position: relative; z-index: 3; margin-top: 14px !important; flex-direction: row !important; flex-wrap: nowrap; gap: 7px !important; width: 100%; }
-  #top .hero-actions a { padding: 9px 10px !important; font-size: .65rem !important; line-height: 1.1 !important; white-space: nowrap; }
-  #top .hero-actions svg { width: 15px; height: 15px; }
-  #top .hero-bullets { display: none !important; }
-  #top .hero-ticker > div { min-height: 38px; }
-  #top .hero-ticker > div > div:first-child { padding-inline: 10px !important; font-size: 10px !important; letter-spacing: .08em !important; }
-  #top .hero-ticker > div > div:last-child { padding-block: 7px !important; }
-  #top .hero-ticker .ticker-track { gap: 20px !important; padding-left: 14px !important; }
-  #top .hero-ticker .ticker-track span { gap: 20px !important; font-size: 11px !important; letter-spacing: .08em !important; }
+  main > section:not(#top) {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-block: 2rem !important;
+  }
+  header {
+    background: rgba(5, 3, 10, 0.92) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(16px);
+  }
+  header .container-x {
+    height: 60px !important;
+  }
+  header [data-header-logo] {
+    height: 36px !important;
+  }
+  header button[aria-controls="mobile-menu"] {
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    background: rgba(255, 255, 255, 0.07) !important;
+  }
+  header #mobile-menu {
+    background: #080511 !important;
+  }
+  header #mobile-menu a {
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  #top {
+    padding-top: 60px !important;
+  }
+  #top .hero-layout {
+    display: block !important;
+    position: relative;
+    min-height: 450px !important;
+    padding-top: 22px !important;
+    padding-bottom: 12px !important;
+  }
+  #top .hero-eyebrow {
+    display: none !important;
+  }
+  #top .mobile-hero-break {
+    display: block;
+  }
+  #top .hero-headline {
+    position: relative;
+    z-index: 2;
+    width: 59%;
+    max-width: none;
+    margin-top: 0 !important;
+    font-size: clamp(2.05rem, 9.2vw, 2.65rem) !important;
+    line-height: 0.91 !important;
+    letter-spacing: -0.04em !important;
+  }
+  #top .hero-device {
+    position: absolute !important;
+    z-index: 1;
+    top: 44px;
+    right: 0;
+    width: 42% !important;
+    max-width: 160px !important;
+    margin: 0 !important;
+  }
+  #top .hero-device > div:first-child {
+    filter: drop-shadow(0 12px 25px rgba(255, 62, 165, 0.18));
+  }
+  #top .hero-description {
+    position: relative;
+    z-index: 2;
+    margin-top: 14px !important;
+    width: 60%;
+    max-width: none !important;
+    font-size: 0.82rem !important;
+    line-height: 1.3 !important;
+  }
+  #top .hero-actions {
+    position: relative;
+    z-index: 3;
+    margin-top: 14px !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    gap: 7px !important;
+    width: 100%;
+  }
+  #top .hero-actions a {
+    padding: 9px 10px !important;
+    font-size: 0.65rem !important;
+    line-height: 1.1 !important;
+    white-space: nowrap;
+  }
+  #top .hero-actions svg {
+    width: 15px;
+    height: 15px;
+  }
+  #top .hero-bullets {
+    display: none !important;
+  }
+  #top .hero-ticker > div {
+    min-height: 38px;
+  }
+  #top .hero-ticker > div > div:first-child {
+    padding-inline: 10px !important;
+    font-size: 10px !important;
+    letter-spacing: 0.08em !important;
+  }
+  #top .hero-ticker > div > div:last-child {
+    padding-block: 7px !important;
+  }
+  #top .hero-ticker .ticker-track {
+    gap: 20px !important;
+    padding-left: 14px !important;
+  }
+  #top .hero-ticker .ticker-track span {
+    gap: 20px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+  }
 }
 @media (max-width: 380px) {
-  #top .hero-layout { min-height: 420px !important; }
-  #top .hero-headline { width: 59%; font-size: clamp(1.95rem, 9.5vw, 2.35rem) !important; }
-  #top .hero-device { width: 42% !important; max-width: 148px !important; }
-  #top .hero-description { width: 60%; font-size: .78rem !important; }
-  #top .hero-actions a { padding: 8px 8px !important; font-size: .61rem !important; }
+  #top .hero-layout {
+    min-height: 420px !important;
+  }
+  #top .hero-headline {
+    width: 59%;
+    font-size: clamp(1.95rem, 9.5vw, 2.35rem) !important;
+  }
+  #top .hero-device {
+    width: 42% !important;
+    max-width: 148px !important;
+  }
+  #top .hero-description {
+    width: 60%;
+    font-size: 0.78rem !important;
+  }
+  #top .hero-actions a {
+    padding: 8px 8px !important;
+    font-size: 0.61rem !important;
+  }
 }
 
 /* Mobile-only Field Activities section styling, following the supplied reference. */
 @media (max-width: 767px) {
-  #game.game-experience-section { padding-block: 3.25rem !important; }
-  #game .game-intro { max-width: 100%; }
-  #game .game-intro .eyebrow { font-size: .62rem !important; letter-spacing: .28em !important; }
-  #game .game-heading { margin-top: 12px !important; font-size: clamp(1.75rem, 8vw, 2.2rem) !important; line-height: .98 !important; }
-  #game .game-description { margin-top: 12px !important; font-size: .78rem !important; line-height: 1.35 !important; max-width: 290px !important; }
-  #game .game-cards { margin-top: 1rem !important; grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 10px !important; }
-  #game .game-card { padding: 13px 12px !important; min-height: 104px; border-radius: 17px !important; background: rgba(255,255,255,.055) !important; }
-  #game .game-card > div:first-child { opacity: .28; width: 8rem; height: 8rem; right: -2.5rem; top: -2.5rem; }
-  #game .game-card-content { gap: 10px !important; align-items: flex-start !important; }
-  #game .game-card-icon { width: 40px !important; height: 40px !important; border-radius: 50% !important; flex: 0 0 40px !important; box-shadow: 0 0 18px rgba(255,62,165,.55) !important; }
-  #game .game-card-icon svg { width: 21px !important; height: 21px !important; }
-  #game .game-card-title { font-size: 1.05rem !important; line-height: 1.05 !important; margin-top: 3px !important; }
-  #game .game-card-line, #game .game-card-copy { display: none !important; }
-  #game .game-card-mobile-copy { display: block !important; margin-top: 7px !important; font-size: .68rem !important; line-height: 1.28 !important; color: rgba(255,255,255,.68) !important; max-width: 135px; }
-  #game .game-card-content > div { min-width: 0; }
-  #game .mt-16 { margin-top: 2rem !important; }
-  #game ol { margin-top: 2rem !important; gap: 9px !important; }
-  #game ol li { padding: 12px 8px !important; gap: 7px !important; }
-  #game ol li span:last-child { font-size: .75rem !important; line-height: 1.15 !important; }
-  #game ol li svg { width: 18px !important; height: 18px !important; }
-  #game > .container-x > p:last-child { font-size: .82rem !important; margin-top: 1rem !important; }
+  #game.game-experience-section {
+    padding-block: 0.75rem !important;
+  }
+  #game .game-intro {
+    max-width: 100%;
+  }
+  #game .game-intro .eyebrow {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.28em !important;
+  }
+  #game .game-heading {
+    margin-top: 12px !important;
+    font-size: clamp(1.75rem, 8vw, 2.2rem) !important;
+    line-height: 0.98 !important;
+  }
+  #game .game-description {
+    margin-top: 12px !important;
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+    max-width: 290px !important;
+  }
+  #game .game-cards {
+    margin-top: 1rem !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+  #game .game-card {
+    padding: 13px 12px !important;
+    min-height: 104px;
+    border-radius: 17px !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+  }
+  #game .game-card > div:first-child {
+    opacity: 0.28;
+    width: 8rem;
+    height: 8rem;
+    right: -2.5rem;
+    top: -2.5rem;
+  }
+  #game .game-card-content {
+    gap: 10px !important;
+    align-items: flex-start !important;
+  }
+  #game .game-card-icon {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    flex: 0 0 40px !important;
+    box-shadow: 0 0 18px rgba(255, 62, 165, 0.55) !important;
+  }
+  #game .game-card-icon svg {
+    width: 21px !important;
+    height: 21px !important;
+  }
+  #game .game-card-title {
+    font-size: 1.05rem !important;
+    line-height: 1.05 !important;
+    margin-top: 3px !important;
+  }
+  #game .game-card-line,
+  #game .game-card-copy {
+    display: none !important;
+  }
+  #game .game-card-mobile-copy {
+    display: block !important;
+    margin-top: 7px !important;
+    font-size: 0.68rem !important;
+    line-height: 1.28 !important;
+    color: rgba(255, 255, 255, 0.68) !important;
+    max-width: 135px;
+  }
+  #game .game-card-content > div {
+    min-width: 0;
+  }
+  #game .mt-16 {
+    margin-top: 2rem !important;
+  }
+  #game ol {
+    margin-top: 2rem !important;
+    gap: 9px !important;
+  }
+  #game ol li {
+    padding: 12px 8px !important;
+    gap: 7px !important;
+  }
+  #game ol li span:last-child {
+    font-size: 0.75rem !important;
+    line-height: 1.15 !important;
+  }
+  #game ol li svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  #game > .container-x > p:last-child {
+    font-size: 0.82rem !important;
+    margin-top: 1rem !important;
+  }
 }
 
 /* Mobile field performance panel: pitch, zones, stat tiles. Desktop unaffected. */
 @media (max-width: 767px) {
-  #game .game-performance-visual { margin-top: 1.65rem !important; }
-  #game .pitch-performance { padding-inline: 0; }
-  #game .pitch-zones { margin-top: 9px !important; gap: 0 !important; }
-  #game .pitch-zone-label { font-size: .72rem !important; line-height: 1 !important; white-space: nowrap; }
-  #game .pitch-zones > div { gap: 0 !important; }
-  #game .pitch-zones svg { display: none !important; }
-  #game .mobile-performance-stats { display: grid !important; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; margin-top: 14px; }
-  #game .mobile-performance-stat { display:flex; min-width:0; flex-direction:column; align-items:center; justify-content:center; gap:5px; padding: 11px 5px 10px !important; border-radius: 13px !important; background:rgba(255,255,255,.055) !important; text-align:center; }
-  #game .mobile-performance-stat svg { width:19px; height:19px; color:#ff3ea5; filter:drop-shadow(0 0 7px rgba(255,62,165,.55)); }
-  #game .mobile-performance-stat strong { font-family:inherit; font-size: .9rem; line-height:1; color:white; }
-  #game .mobile-performance-stat span { font-size:.52rem; line-height:1.15; font-weight:700; text-transform:uppercase; color:rgba(255,255,255,.65); }
-  #game .mobile-performance-caption { display:block !important; margin-top: 13px !important; text-align:center; font-size:.55rem !important; letter-spacing:.28em; font-weight:800; text-transform:uppercase; color:rgba(255,255,255,.48); }
-  #game .game-journey { display:none !important; }
+  #game .game-performance-visual {
+    margin-top: 1.65rem !important;
+  }
+  #game .pitch-performance {
+    padding-inline: 0;
+  }
+  #game .pitch-zones {
+    margin-top: 9px !important;
+    gap: 0 !important;
+  }
+  #game .pitch-zone-label {
+    font-size: 0.72rem !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+  }
+  #game .pitch-zones > div {
+    gap: 0 !important;
+  }
+  #game .pitch-zones svg {
+    display: none !important;
+  }
+  #game .mobile-performance-stats {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+  }
+  #game .mobile-performance-stat {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 11px 5px 10px !important;
+    border-radius: 13px !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+    text-align: center;
+  }
+  #game .mobile-performance-stat svg {
+    width: 19px;
+    height: 19px;
+    color: #ff3ea5;
+    filter: drop-shadow(0 0 7px rgba(255, 62, 165, 0.55));
+  }
+  #game .mobile-performance-stat strong {
+    font-family: inherit;
+    font-size: 0.9rem;
+    line-height: 1;
+    color: white;
+  }
+  #game .mobile-performance-stat span {
+    font-size: 0.52rem;
+    line-height: 1.15;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+  }
+  #game .mobile-performance-caption {
+    display: block !important;
+    margin-top: 13px !important;
+    text-align: center;
+    font-size: 0.55rem !important;
+    letter-spacing: 0.28em;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.48);
+  }
+  #game .game-journey {
+    display: none !important;
+  }
 }
 @media (max-width: 380px) {
-  #game .mobile-performance-stats { gap: 6px; }
-  #game .mobile-performance-stat { padding-inline: 3px !important; }
-  #game .mobile-performance-stat span { font-size: .48rem; }
-  #game .pitch-zone-label { font-size: .66rem !important; }
+  #game .mobile-performance-stats {
+    gap: 6px;
+  }
+  #game .mobile-performance-stat {
+    padding-inline: 3px !important;
+  }
+  #game .mobile-performance-stat span {
+    font-size: 0.48rem;
+  }
+  #game .pitch-zone-label {
+    font-size: 0.66rem !important;
+  }
 }
 
 /* Mobile compact tournament flow matching the supplied visual reference. */
 @media (max-width: 767px) {
-  #tournament { padding-block: 3.25rem !important; overflow: hidden; }
-  #tournament .container-x { padding-inline: 12px !important; }
-  #tournament .container-x > div:first-of-type { max-width: 100% !important; text-align: center; }
-  #tournament .eyebrow { font-size: .6rem !important; letter-spacing: .28em !important; }
-  #tournament h2 { margin-top: 10px !important; font-size: clamp(1.65rem, 7.5vw, 2.15rem) !important; line-height: 1 !important; }
-  #tournament .container-x > div:first-of-type > p:last-child { margin-top: 11px !important; font-size: .72rem !important; line-height: 1.3 !important; }
-  #tournament .tournament-brackets { margin-top: 1.35rem !important; }
-  #tournament .mobile-compact-bracket { display:grid !important; grid-template-columns: 1.08fr 1.15fr 1fr .92fr .9fr; gap: 5px; align-items:stretch; width:100%; }
-  #tournament .compact-bracket-round { min-width:0; }
-  #tournament .compact-bracket-label { min-height: 23px; margin-bottom: 7px; display:flex; align-items:center; justify-content:center; text-align:center; font-size: .43rem; line-height:1; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:rgba(255,255,255,.65); white-space:nowrap; }
-  #tournament .compact-champion .compact-bracket-label { color:#facc15; }
-  #tournament .compact-bracket-list { display:flex; flex-direction:column; gap:6px; }
-  #tournament .compact-bracket-team { display:flex; align-items:center; gap:3px; min-width:0; height:24px; padding:3px 4px; border-radius:6px; background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.07); color:rgba(255,255,255,.78); font-size:.42rem; font-weight:600; line-height:1; white-space:nowrap; overflow:hidden; }
-  #tournament .compact-team-dot { width:6px; height:6px; flex:0 0 6px; border-radius:50%; box-shadow:0 0 6px currentColor; }
-  #tournament .compact-bracket-match { display:flex; flex-direction:column; gap:3px; padding:3px; border-radius:7px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); }
-  #tournament .compact-bracket-match .compact-bracket-team { height:20px; border:0; background:rgba(255,255,255,.035); padding:2px; }
-  #tournament .compact-bracket-match.is-highlight { border-color:rgba(255,62,165,.55); background:rgba(255,62,165,.15); box-shadow:0 0 12px rgba(255,62,165,.16); }
-  #tournament .compact-bracket-list > .compact-bracket-match { margin-bottom:3px; }
-  #tournament .compact-semifinals { margin-top:12px; gap:10px; }
-  #tournament .compact-finals { margin-top:26px; }
-  #tournament .compact-trophy-wrap { min-height:130px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:4px; border-radius:9px; background:radial-gradient(ellipse at center,#401568 0%,#170b27 65%,rgba(8,5,16,.5) 100%); border:1px solid rgba(250,204,21,.2); }
-  #tournament .compact-trophy-art { width:100%; max-width:58px; height:65px; object-fit:contain; }
-  #tournament .compact-trophy-wrap span { margin-top:5px; font-size:.42rem; font-weight:800; line-height:1.1; text-align:center; text-transform:uppercase; color:#fef3c7; }
-  #tournament .lg\\:hidden { display:block !important; }
-  #tournament .mobile-compact-bracket { display:grid !important; }
-  #tournament ol.space-y-2 { display:none !important; }
-  #tournament .container-x > p:last-child { display:none !important; }
+  #tournament {
+    padding-block: 3.25rem !important;
+    overflow: hidden;
+  }
+  #tournament .container-x {
+    padding-inline: 12px !important;
+  }
+  #tournament .container-x > div:first-of-type {
+    max-width: 100% !important;
+    text-align: center;
+  }
+  #tournament .eyebrow {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.28em !important;
+  }
+  #tournament h2 {
+    margin-top: 10px !important;
+    font-size: clamp(1.65rem, 7.5vw, 2.15rem) !important;
+    line-height: 1 !important;
+  }
+  #tournament .container-x > div:first-of-type > p:last-child {
+    margin-top: 11px !important;
+    font-size: 0.72rem !important;
+    line-height: 1.3 !important;
+  }
+  #tournament .tournament-brackets {
+    margin-top: 1.35rem !important;
+  }
+  #tournament .mobile-compact-bracket {
+    display: grid !important;
+    grid-template-columns: 1.08fr 1.15fr 1fr 0.92fr 0.9fr;
+    gap: 5px;
+    align-items: stretch;
+    width: 100%;
+  }
+  #tournament .compact-bracket-round {
+    min-width: 0;
+  }
+  #tournament .compact-bracket-label {
+    min-height: 23px;
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.43rem;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+    white-space: nowrap;
+  }
+  #tournament .compact-champion .compact-bracket-label {
+    color: #facc15;
+  }
+  #tournament .compact-bracket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  #tournament .compact-bracket-team {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    min-width: 0;
+    height: 24px;
+    padding: 3px 4px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.42rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  #tournament .compact-team-dot {
+    width: 6px;
+    height: 6px;
+    flex: 0 0 6px;
+    border-radius: 50%;
+    box-shadow: 0 0 6px currentColor;
+  }
+  #tournament .compact-bracket-match {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 3px;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+  }
+  #tournament .compact-bracket-match .compact-bracket-team {
+    height: 20px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.035);
+    padding: 2px;
+  }
+  #tournament .compact-bracket-match.is-highlight {
+    border-color: rgba(255, 62, 165, 0.55);
+    background: rgba(255, 62, 165, 0.15);
+    box-shadow: 0 0 12px rgba(255, 62, 165, 0.16);
+  }
+  #tournament .compact-bracket-list > .compact-bracket-match {
+    margin-bottom: 3px;
+  }
+  #tournament .compact-semifinals {
+    margin-top: 12px;
+    gap: 10px;
+  }
+  #tournament .compact-finals {
+    margin-top: 26px;
+  }
+  #tournament .compact-trophy-wrap {
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 9px;
+    background: radial-gradient(
+      ellipse at center,
+      #401568 0%,
+      #170b27 65%,
+      rgba(8, 5, 16, 0.5) 100%
+    );
+    border: 1px solid rgba(250, 204, 21, 0.2);
+  }
+  #tournament .compact-trophy-art {
+    width: 100%;
+    max-width: 58px;
+    height: 65px;
+    object-fit: contain;
+  }
+  #tournament .compact-trophy-wrap span {
+    margin-top: 5px;
+    font-size: 0.42rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fef3c7;
+  }
+  #tournament .lg\\:hidden {
+    display: block !important;
+  }
+  #tournament .mobile-compact-bracket {
+    display: grid !important;
+  }
+  #tournament ol.space-y-2 {
+    display: none !important;
+  }
+  #tournament .container-x > p:last-child {
+    display: none !important;
+  }
 }
 @media (max-width: 380px) {
-  #tournament .container-x { padding-inline:9px !important; }
-  #tournament .mobile-compact-bracket { gap:4px; grid-template-columns: 1.05fr 1.15fr 1fr .9fr .88fr; }
-  #tournament .compact-bracket-label { font-size:.39rem; letter-spacing:0; }
-  #tournament .compact-bracket-team { font-size:.38rem; padding-inline:3px; }
-  #tournament .compact-bracket-match .compact-bracket-team { font-size:.36rem; }
-  #tournament .compact-trophy-art { max-width:50px; }
+  #tournament .container-x {
+    padding-inline: 9px !important;
+  }
+  #tournament .mobile-compact-bracket {
+    gap: 4px;
+    grid-template-columns: 1.05fr 1.15fr 1fr 0.9fr 0.88fr;
+  }
+  #tournament .compact-bracket-label {
+    font-size: 0.39rem;
+    letter-spacing: 0;
+  }
+  #tournament .compact-bracket-team {
+    font-size: 0.38rem;
+    padding-inline: 3px;
+  }
+  #tournament .compact-bracket-match .compact-bracket-team {
+    font-size: 0.36rem;
+  }
+  #tournament .compact-trophy-art {
+    max-width: 50px;
+  }
 }
-
 
 /* Mobile tournament: readable five-stage bracket, horizontally swipeable only on small screens. */
 @media (max-width: 767px) {
-  #tournament .tournament-brackets { overflow-x:auto !important; overflow-y:hidden !important; -webkit-overflow-scrolling:touch !important; padding-bottom:8px !important; }
-  #tournament .mobile-compact-bracket { display:grid !important; grid-template-columns:138px 138px 126px 120px 112px !important; width:max-content !important; min-width:0 !important; gap:8px !important; align-items:start !important; }
-  #tournament .compact-bracket-round { min-width:0 !important; }
-  #tournament .compact-bracket-label { font-size:9px !important; letter-spacing:.08em !important; min-height:22px !important; white-space:nowrap !important; text-align:center !important; margin:0 0 6px !important; }
-  #tournament .compact-group-box { padding:6px !important; margin:0 0 7px !important; border:1px solid rgba(255,255,255,.12) !important; border-radius:9px !important; background:rgba(255,255,255,.04) !important; }
-  #tournament .compact-group-title { text-align:center !important; color:#ff45ba !important; font-size:9px !important; font-weight:800 !important; text-transform:uppercase !important; margin:0 0 5px !important; }
-  #tournament .compact-group-list { display:flex !important; flex-direction:column !important; gap:5px !important; }
-  #tournament .compact-bracket-team { display:flex !important; align-items:center !important; min-height:31px !important; height:auto !important; white-space:normal !important; overflow:visible !important; font-size:10px !important; line-height:1.15 !important; padding:5px !important; gap:5px !important; }
-  #tournament .compact-team-name { display:flex !important; align-items:center !important; min-width:0 !important; min-height:100% !important; overflow-wrap:anywhere !important; line-height:1.2 !important; }
-  #tournament .compact-team-dot { width:6px !important; height:6px !important; flex:0 0 6px !important; margin:0 !important; align-self:center !important; }
-  #tournament .compact-bracket-list { display:flex !important; flex-direction:column !important; gap:7px !important; }
-  #tournament .compact-bracket-match { display:flex !important; flex-direction:column !important; justify-content:center !important; min-width:0 !important; padding:5px !important; gap:3px !important; }
-  #tournament .compact-bracket-match .compact-bracket-team { min-height:31px !important; height:auto !important; font-size:10px !important; padding:4px !important; align-items:center !important; }
-  #tournament .compact-semifinals { margin-top:28px !important; gap:22px !important; }
-  #tournament .compact-finals { margin-top:65px !important; }
-  #tournament .compact-trophy-wrap { min-height:150px !important; padding:8px !important; display:flex !important; flex-direction:column !important; align-items:center !important; justify-content:center !important; }
-  #tournament .compact-trophy-art { max-width:88px !important; width:100% !important; height:90px !important; }
-  #tournament .compact-trophy-wrap span { font-size:9px !important; text-align:center !important; }
+  #tournament .tournament-brackets {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 8px !important;
+  }
+  #tournament .mobile-compact-bracket {
+    display: grid !important;
+    grid-template-columns: 138px 138px 126px 120px 112px !important;
+    width: max-content !important;
+    min-width: 0 !important;
+    gap: 8px !important;
+    align-items: start !important;
+  }
+  #tournament .compact-bracket-round {
+    min-width: 0 !important;
+  }
+  #tournament .compact-bracket-label {
+    font-size: 9px !important;
+    letter-spacing: 0.08em !important;
+    min-height: 22px !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    margin: 0 0 6px !important;
+  }
+  #tournament .compact-group-box {
+    padding: 6px !important;
+    margin: 0 0 7px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 9px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+  }
+  #tournament .compact-group-title {
+    text-align: center !important;
+    color: #ff45ba !important;
+    font-size: 9px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 5px !important;
+  }
+  #tournament .compact-group-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+  }
+  #tournament .compact-bracket-team {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 31px !important;
+    height: auto !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    font-size: 10px !important;
+    line-height: 1.15 !important;
+    padding: 5px !important;
+    gap: 5px !important;
+  }
+  #tournament .compact-team-name {
+    display: flex !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    min-height: 100% !important;
+    overflow-wrap: anywhere !important;
+    line-height: 1.2 !important;
+  }
+  #tournament .compact-team-dot {
+    width: 6px !important;
+    height: 6px !important;
+    flex: 0 0 6px !important;
+    margin: 0 !important;
+    align-self: center !important;
+  }
+  #tournament .compact-bracket-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 7px !important;
+  }
+  #tournament .compact-bracket-match {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    padding: 5px !important;
+    gap: 3px !important;
+  }
+  #tournament .compact-bracket-match .compact-bracket-team {
+    min-height: 31px !important;
+    height: auto !important;
+    font-size: 10px !important;
+    padding: 4px !important;
+    align-items: center !important;
+  }
+  #tournament .compact-semifinals {
+    margin-top: 28px !important;
+    gap: 22px !important;
+  }
+  #tournament .compact-finals {
+    margin-top: 65px !important;
+  }
+  #tournament .compact-trophy-wrap {
+    min-height: 150px !important;
+    padding: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  #tournament .compact-trophy-art {
+    max-width: 88px !important;
+    width: 100% !important;
+    height: 90px !important;
+  }
+  #tournament .compact-trophy-wrap span {
+    font-size: 9px !important;
+    text-align: center !important;
+  }
 }
 @media (max-width: 380px) {
-  #tournament .mobile-compact-bracket { grid-template-columns:128px 128px 116px 110px 104px !important; gap:6px !important; }
-  #tournament .compact-bracket-team { font-size:9px !important; }
-  #tournament .compact-bracket-match .compact-bracket-team { font-size:9px !important; }
+  #tournament .mobile-compact-bracket {
+    grid-template-columns: 128px 128px 116px 110px 104px !important;
+    gap: 6px !important;
+  }
+  #tournament .compact-bracket-team {
+    font-size: 9px !important;
+  }
+  #tournament .compact-bracket-match .compact-bracket-team {
+    font-size: 9px !important;
+  }
 }
 
 /* Mobile Sales Experience reference layout. All rules are scoped to #app. */
 @media (max-width: 767px) {
-  #app { padding-block: 2.5rem 3rem !important; overflow: hidden; }
-  #app .container-x { padding-inline: 12px !important; }
-  #app .app-showcase-existing-intro, #app .app-showcase-existing-tabs, #app .app-showcase-existing-layout { display: none !important; }
-  #app .app-showcase-mobile-reference { display: block !important; }
-  #app .app-mobile-intro { text-align: center; max-width: 100%; margin: 0 auto; }
-  #app .app-mobile-intro .eyebrow { display: block !important; margin: 0 auto 10px !important; font-size: .58rem !important; letter-spacing: .3em !important; color: #ff45ba !important; }
-  #app .app-mobile-intro h2 { margin: 0 !important; font-size: clamp(1.7rem, 7.5vw, 2.25rem) !important; line-height: .98 !important; letter-spacing: -.035em !important; }
-  #app .app-mobile-intro > p:last-child { margin: 10px auto 0 !important; max-width: 320px; font-size: .72rem !important; line-height: 1.3 !important; color: rgba(255,255,255,.68) !important; }
-  #app .app-mobile-showcase-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.9fr) minmax(0,1fr); align-items: center; gap: 7px; margin-top: 1.15rem; }
-  #app .app-mobile-feature-list { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
-  #app .app-mobile-feature-list > div { display: flex; align-items: center; min-width: 0; gap: 5px; padding: 8px 6px; border: 1px solid rgba(255,62,165,.26); border-radius: 9px; background: linear-gradient(110deg,rgba(255,62,165,.14),rgba(255,255,255,.045)); box-shadow: 0 0 12px rgba(255,62,165,.06); }
-  #app .app-mobile-feature-list svg { width: 13px; height: 13px; flex: 0 0 13px; color: #ff45ba; filter: drop-shadow(0 0 5px rgba(255,62,165,.45)); }
-  #app .app-mobile-feature-list span { font-size: clamp(.42rem, 1.8vw, .55rem); font-weight: 800; line-height: 1.08; text-transform: uppercase; color: rgba(255,255,255,.9); }
-  #app .app-mobile-phone { min-width: 0; width: 100%; }
-  #app .app-mobile-phone > div { width: 100% !important; max-width: none !important; }
-  #app .app-mobile-phone img { display: block; }
-  #app .app-mobile-upload-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; padding: 9px 6px; border: 1px solid rgba(255,62,165,.22); border-radius: 13px; background: linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,62,165,.06)); text-align: center; box-shadow: inset 0 0 20px rgba(255,62,165,.04); }
-  #app .app-mobile-upload-icon { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; margin-bottom: 9px; background: rgba(255,62,165,.17); color: #ff45ba; box-shadow: 0 0 18px rgba(255,62,165,.28); }
-  #app .app-mobile-upload-icon svg { width: 16px; height: 16px; }
-  #app .app-mobile-upload-card h3 { margin: 0; font-size: .58rem; line-height: 1.1; font-weight: 900; text-transform: uppercase; color: white; }
-  #app .app-mobile-upload-card p { margin: 7px 0 9px; font-size: .48rem; line-height: 1.25; color: rgba(255,255,255,.66); }
-  #app .app-mobile-upload-card button { display: inline-flex; align-items: center; justify-content: center; gap: 3px; width: 100%; padding: 6px 4px; border: 1px solid rgba(255,62,165,.65); border-radius: 999px; font-size: .48rem; line-height: 1; font-weight: 800; color: white; white-space: nowrap; background: rgba(255,62,165,.08); }
-  #app .app-mobile-upload-card button svg { width: 10px; height: 10px; }
-  #app .app-mobile-dots { display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: 12px; }
-  #app .app-mobile-dots button { width: 6px; height: 6px; border: 0; border-radius: 50%; padding: 0; background: rgba(255,255,255,.25); }
-  #app .app-mobile-dots button[aria-selected="true"] { width: 7px; height: 7px; background: #ff45ba; box-shadow: 0 0 8px rgba(255,62,165,.6); }
+  #app {
+    padding-block: 2.5rem 3rem !important;
+    overflow: hidden;
+  }
+  #app .container-x {
+    padding-inline: 12px !important;
+  }
+  #app .app-showcase-existing-intro,
+  #app .app-showcase-existing-tabs,
+  #app .app-showcase-existing-layout {
+    display: none !important;
+  }
+  #app .app-showcase-mobile-reference {
+    display: block !important;
+  }
+  #app .app-mobile-intro {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  #app .app-mobile-intro .eyebrow {
+    display: block !important;
+    margin: 0 auto 10px !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.3em !important;
+    color: #ff45ba !important;
+  }
+  #app .app-mobile-intro h2 {
+    margin: 0 !important;
+    font-size: clamp(1.7rem, 7.5vw, 2.25rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.035em !important;
+  }
+  #app .app-mobile-intro > p:last-child {
+    margin: 10px auto 0 !important;
+    max-width: 320px;
+    font-size: 0.72rem !important;
+    line-height: 1.3 !important;
+    color: rgba(255, 255, 255, 0.68) !important;
+  }
+  #app .app-mobile-showcase-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 7px;
+    margin-top: 1.15rem;
+  }
+  #app .app-mobile-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+  }
+  #app .app-mobile-feature-list > div {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    gap: 5px;
+    padding: 8px 6px;
+    border: 1px solid rgba(255, 62, 165, 0.26);
+    border-radius: 9px;
+    background: linear-gradient(
+      110deg,
+      rgba(255, 62, 165, 0.14),
+      rgba(255, 255, 255, 0.045)
+    );
+    box-shadow: 0 0 12px rgba(255, 62, 165, 0.06);
+  }
+  #app .app-mobile-feature-list svg {
+    width: 13px;
+    height: 13px;
+    flex: 0 0 13px;
+    color: #ff45ba;
+    filter: drop-shadow(0 0 5px rgba(255, 62, 165, 0.45));
+  }
+  #app .app-mobile-feature-list span {
+    font-size: clamp(0.42rem, 1.8vw, 0.55rem);
+    font-weight: 800;
+    line-height: 1.08;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  #app .app-mobile-phone {
+    min-width: 0;
+    width: 100%;
+  }
+  #app .app-mobile-phone > div {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  #app .app-mobile-phone img {
+    display: block;
+  }
+  #app .app-mobile-upload-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 9px 6px;
+    border: 1px solid rgba(255, 62, 165, 0.22);
+    border-radius: 13px;
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 62, 165, 0.06)
+    );
+    text-align: center;
+    box-shadow: inset 0 0 20px rgba(255, 62, 165, 0.04);
+  }
+  #app .app-mobile-upload-icon {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-bottom: 9px;
+    background: rgba(255, 62, 165, 0.17);
+    color: #ff45ba;
+    box-shadow: 0 0 18px rgba(255, 62, 165, 0.28);
+  }
+  #app .app-mobile-upload-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  #app .app-mobile-upload-card h3 {
+    margin: 0;
+    font-size: 0.58rem;
+    line-height: 1.1;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+  }
+  #app .app-mobile-upload-card p {
+    margin: 7px 0 9px;
+    font-size: 0.48rem;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.66);
+  }
+  #app .app-mobile-upload-card button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    width: 100%;
+    padding: 6px 4px;
+    border: 1px solid rgba(255, 62, 165, 0.65);
+    border-radius: 999px;
+    font-size: 0.48rem;
+    line-height: 1;
+    font-weight: 800;
+    color: white;
+    white-space: nowrap;
+    background: rgba(255, 62, 165, 0.08);
+  }
+  #app .app-mobile-upload-card button svg {
+    width: 10px;
+    height: 10px;
+  }
+  #app .app-mobile-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 12px;
+  }
+  #app .app-mobile-dots button {
+    width: 6px;
+    height: 6px;
+    border: 0;
+    border-radius: 50%;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  #app .app-mobile-dots button[aria-selected="true"] {
+    width: 7px;
+    height: 7px;
+    background: #ff45ba;
+    box-shadow: 0 0 8px rgba(255, 62, 165, 0.6);
+  }
 }
 @media (max-width: 360px) {
-  #app .app-mobile-showcase-grid { gap: 5px; }
-  #app .app-mobile-feature-list > div { padding: 7px 4px; gap: 4px; }
-  #app .app-mobile-feature-list svg { width: 11px; height: 11px; flex-basis: 11px; }
-  #app .app-mobile-upload-card { padding-inline: 4px; }
-  #app .app-mobile-upload-card p { font-size: .44rem; }
+  #app .app-mobile-showcase-grid {
+    gap: 5px;
+  }
+  #app .app-mobile-feature-list > div {
+    padding: 7px 4px;
+    gap: 4px;
+  }
+  #app .app-mobile-feature-list svg {
+    width: 11px;
+    height: 11px;
+    flex-basis: 11px;
+  }
+  #app .app-mobile-upload-card {
+    padding-inline: 4px;
+  }
+  #app .app-mobile-upload-card p {
+    font-size: 0.44rem;
+  }
 }
 
 /* Mobile layout adjustment: large phone on left, feature and upload cards stacked right. */
 @media (max-width: 767px) {
   #app .app-mobile-showcase-grid {
-    grid-template-columns: minmax(0,1.08fr) minmax(0,.92fr) !important;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr) !important;
     align-items: stretch !important;
     gap: 10px !important;
     margin-top: 1.25rem !important;
@@ -368,7 +1087,7 @@
     min-height: 31px !important;
   }
   #app .app-mobile-feature-list span {
-    font-size: clamp(.48rem, 2vw, .62rem) !important;
+    font-size: clamp(0.48rem, 2vw, 0.62rem) !important;
   }
   #app .app-mobile-upload-card {
     padding: 12px 8px !important;
@@ -378,24 +1097,24 @@
     height: 34px !important;
   }
   #app .app-mobile-upload-card h3 {
-    font-size: clamp(.6rem, 2.3vw, .72rem) !important;
+    font-size: clamp(0.6rem, 2.3vw, 0.72rem) !important;
   }
   #app .app-mobile-upload-card p {
-    font-size: clamp(.5rem, 1.9vw, .6rem) !important;
+    font-size: clamp(0.5rem, 1.9vw, 0.6rem) !important;
     line-height: 1.3 !important;
   }
   #app .app-mobile-upload-card button {
-    font-size: clamp(.5rem, 1.9vw, .6rem) !important;
+    font-size: clamp(0.5rem, 1.9vw, 0.6rem) !important;
     padding: 7px 5px !important;
   }
 }
 @media (max-width: 360px) {
   #app .app-mobile-showcase-grid {
-    grid-template-columns: minmax(0,1fr) minmax(0,.95fr) !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr) !important;
     gap: 7px !important;
   }
   #app .app-mobile-feature-list span {
-    font-size: .46rem !important;
+    font-size: 0.46rem !important;
   }
   #app .app-mobile-upload-card {
     padding: 9px 5px !important;
@@ -403,6 +1122,11 @@
 }
 
 @media (max-width: 767px) {
-  #app .app-mobile-phone { touch-action: pan-y !important; overflow: hidden; }
-  #app .app-mobile-phone > div { will-change: transform, opacity; }
+  #app .app-mobile-phone {
+    touch-action: pan-y !important;
+    overflow: hidden;
+  }
+  #app .app-mobile-phone > div {
+    will-change: transform, opacity;
+  }
 }
