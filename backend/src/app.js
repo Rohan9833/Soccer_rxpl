@@ -9,6 +9,7 @@ import { env } from './config/env.js';
 import { isDbReady as defaultIsDbReady } from './config/db.js';
 import { Lead } from './models/Lead.js';
 import { leadsRouter } from './routes/leads.js';
+import { sendDemoRequestEmail } from './mailer.js';
 import { errorHandler, notFound } from './middleware/errors.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -20,6 +21,7 @@ export function createApp({
   rateLimitMax = env.rateLimitMax,
   rateLimitWindowMinutes = env.rateLimitWindowMinutes,
   serveFrontend = env.serveFrontend,
+  sendEmail = sendDemoRequestEmail,
 } = {}) {
   const app = express();
 
@@ -80,7 +82,7 @@ export function createApp({
     message: { success: false, message: 'Too many requests. Please try again in a few minutes.' },
   });
 
-  app.use('/api/leads', leadLimiter, leadsRouter({ LeadModel, isDbReady }));
+  app.use('/api/leads', leadLimiter, leadsRouter({ LeadModel, isDbReady, sendEmail }));
   app.use('/api', notFound);
 
   // Optional: serve the built frontend from the same origin (single-service deployment).
