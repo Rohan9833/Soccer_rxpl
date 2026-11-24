@@ -74,6 +74,38 @@ export default function AppShowcase() {
     <section id="app" className="section">
       <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_45%,rgba(75,19,129,0.55),transparent_70%)]" />
       <div className="container-x relative">
+        {/* Mobile reference layout */}
+        <div className="app-showcase-mobile-reference md:hidden">
+          <div className="app-mobile-intro">
+            <p className="eyebrow">Sales Experience</p>
+            <h2 className="headline">Experience Sales<br />Soccer <span className="text-gradient">in Action.</span></h2>
+            <p>A simple, mobile-first experience for your field force to perform, compete, and grow.</p>
+          </div>
+          <div className="app-mobile-showcase-grid">
+            <div className="app-mobile-feature-list" aria-label="Sales Soccer app features">
+              <div><ClipboardList /><span>Log Field Activities</span></div>
+              <div><Target /><span>Join Challenges</span></div>
+              <div><TrendingUp /><span>Track Progress</span></div>
+              <div><Trophy /><span>Earn Rewards</span></div>
+              <div><Sparkles /><span>Compete &amp; Win</span></div>
+            </div>
+            <div className="app-mobile-phone">
+              <IPhoneMockup src={screen.src} alt={`Sales Soccer app: ${screen.title} screen`} priority={index === 0} />
+            </div>
+            <div className="app-mobile-upload-card">
+              <div className="app-mobile-upload-icon"><CloudUpload /></div>
+              <h3>Activity Upload</h3>
+              <p>Log your field activities with photos, notes, and quick updates.</p>
+              <button type="button" onClick={() => go(1)}>Upload Now <ChevronRight /></button>
+            </div>
+          </div>
+          <div className="app-mobile-dots" role="tablist" aria-label="Choose app screen">
+            {APP_SCREENS.map((s, i) => (
+              <button key={s.id} type="button" role="tab" aria-selected={i === index} aria-label={s.title} onClick={() => go(i)} />
+            ))}
+          </div>
+        </div>
+
         <div className="app-showcase-existing-intro mx-auto max-w-3xl text-center">
           <p className="eyebrow justify-center">
             <Smartphone size={16} /> Explore the Sales Soccer App
