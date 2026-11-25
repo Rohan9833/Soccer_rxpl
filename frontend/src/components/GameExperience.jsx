@@ -324,7 +324,9 @@ function Pitch() {
         const p = clamp01((t - T.ballIn) / 250);
         goalRef.current.textContent = label;
         goalRef.current.style.opacity = on ? "1" : "0";
-        goalRef.current.style.transform = `translate(-50%, -50%) scale(${goalOn ? 0.7 + 0.35 * p : dribbleOn ? 1 : 0.7})`;
+        goalRef.current.classList.toggle("live-action-pop", dribbleOn && !goalOn);
+        goalRef.current.className = `absolute z-[2000] font-display text-3xl font-extrabold uppercase italic text-white opacity-0 drop-shadow-[0_0_20px_rgba(255,62,165,1)] ${goalOn ? "left-[76%] sm:left-[86%]" : "left-[18%] sm:left-[24%]"} top-[16%] sm:top-[14%] sm:text-6xl ${dribbleOn && !goalOn ? "live-action-pop" : ""}`;
+        goalRef.current.style.transform = goalOn ? `translate(-50%, -50%) scale(${0.7 + 0.35 * p})` : "";
       }
       if (layerRef.current) {
         const fade =
