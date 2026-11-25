@@ -314,7 +314,7 @@ export default function AppShowcase() {
             </AnimatePresence>
           </div>
         </div>
-        <p className="mt-10 text-center text-sm text-white/40">Swipe, use the arrows, or pick a screen to explore.</p>
+        <p className="mt-10 text-center text-sm text-white/40">Swipe or use the arrows to explore.</p>
       </div>
     </section>
   );
