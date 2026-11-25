@@ -478,7 +478,7 @@ function Pitch() {
           </div>
           <div
             ref={goalRef}
-            className="absolute left-[76%] top-[16%] z-[2000] font-display text-3xl font-extrabold uppercase italic text-white opacity-0 drop-shadow-[0_0_20px_rgba(255,62,165,1)] sm:left-[86%] sm:top-[14%] sm:text-6xl"
+            className="live-action-pop absolute left-[18%] top-[16%] z-[2000] font-display text-3xl font-extrabold uppercase italic text-white opacity-0 drop-shadow-[0_0_20px_rgba(255,62,165,1)] sm:left-[24%] sm:top-[14%] sm:text-6xl"
           >
             Goal!
           </div>
