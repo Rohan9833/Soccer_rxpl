@@ -42,8 +42,8 @@ export default function AppShowcase() {
         timer = window.setTimeout(() => {
           setMobileLandscape(false);
           cycle();
-        }, 4000);
-      }, 1500);
+        }, 6000);
+      }, 2500);
     };
 
     cycle();
