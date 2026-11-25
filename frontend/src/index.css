@@ -298,8 +298,9 @@
     margin-top: 14px !important;
     flex-direction: column !important;
     flex-wrap: nowrap !important;
+    align-items: flex-start !important;
     gap: 8px !important;
-    width: 100%;
+    width: 59% !important;
   }
   #top .hero-actions a {
     width: 100% !important;
