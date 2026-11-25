@@ -309,7 +309,7 @@
   #top .hero-actions a {
     flex: 1 1 0 !important;
     min-width: 0 !important;
-    padding: 9px 5px !important;
+    padding: 12px 5px !important;
     font-size: 0.61rem !important;
     line-height: 1.1 !important;
     white-space: nowrap;
@@ -359,7 +359,7 @@
     font-size: 0.78rem !important;
   }
   #top .hero-actions a {
-    padding: 8px 8px !important;
+    padding: 11px 8px !important;
     font-size: 0.61rem !important;
   }
 }
