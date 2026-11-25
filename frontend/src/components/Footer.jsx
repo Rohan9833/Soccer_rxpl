@@ -34,12 +34,12 @@ export default function Footer() {
       <div className="container-x">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
-            <div className="flex items-center gap-5">
+            <div className="flex w-full items-center justify-between gap-5">
               <Logo imgClassName="h-12" />
               <img
                 src="/assets/Productbydigilateral.png"
                 alt="Product by digiLATERAL"
-                className="h-9 w-auto max-w-[150px] object-contain"
+                className="ml-auto h-9 w-auto max-w-[150px] object-contain"
               />
             </div>
             <p className="headline mt-5 text-3xl">
