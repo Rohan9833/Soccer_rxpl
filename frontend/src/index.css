@@ -471,11 +471,11 @@
 }
 
 @keyframes live-action-pop {
-  0%, 100% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.82; }
-  50% { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
+  0%, 100% { transform: translate(-50%, -50%) scale(0.96); opacity: 0.88; }
+  50% { transform: translate(-50%, -50%) scale(1.06); opacity: 1; }
 }
 .live-action-pop {
-  animation: live-action-pop 700ms ease-in-out infinite;
+  animation: live-action-pop 1.6s ease-in-out infinite;
   transform-origin: center;
   letter-spacing: 0.04em;
 }
