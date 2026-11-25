@@ -166,10 +166,10 @@ export default function TournamentExperience() {
           <MobileBracket />
         </div>
 
-        <p className="mt-8 flex items-start gap-2 text-sm text-white/45">
+        {/* <p className="mt-8 flex items-start gap-2 text-sm text-white/45">
           <Info size={16} className="mt-0.5 shrink-0" aria-hidden="true" />
           Illustrative tournament. Team names are examples only and do not represent client campaigns or results.
-        </p>
+        </p> */}
       </div>
     </section>
   );
