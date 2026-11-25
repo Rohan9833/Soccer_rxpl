@@ -577,11 +577,11 @@ export default function GameExperience() {
                     {c.line}
                   </p>
                   <p className="game-card-copy mt-3 text-white/70">{c.text}</p>
-                  <p className="game-card-mobile-copy hidden">
+                  {/* <p className="game-card-mobile-copy hidden">
                     {i === 0
                       ? "Log field activities like calls, visits, and demos."
                       : "Achieve targets, complete challenges, and earn points."}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </motion.article>

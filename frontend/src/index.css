@@ -399,7 +399,7 @@
   }
   #game .game-card {
     padding: 13px 12px !important;
-    min-height: 104px;
+    min-height: 45px;
     border-radius: 17px !important;
     background: rgba(255, 255, 255, 0.055) !important;
   }
