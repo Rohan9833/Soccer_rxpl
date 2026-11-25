@@ -309,7 +309,10 @@
   #top .hero-actions a {
     flex: 1 1 0 !important;
     min-width: 0 !important;
-    padding: 12px 5px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    box-sizing: border-box !important;
+    padding: 0 5px !important;
     font-size: 0.61rem !important;
     line-height: 1.1 !important;
     white-space: nowrap;
@@ -359,7 +362,9 @@
     font-size: 0.78rem !important;
   }
   #top .hero-actions a {
-    padding: 11px 8px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    padding: 0 8px !important;
     font-size: 0.61rem !important;
   }
 }
