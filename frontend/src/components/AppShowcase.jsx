@@ -29,22 +29,25 @@ export default function AppShowcase() {
   const screen = APP_SCREENS[index];
   const [mobileLandscape, setMobileLandscape] = useState(false);
 
-  // On the final mobile showcase screen, rotate only the screenshot:
-  // wait 1.5s, hold landscape for 4s, then return to portrait.
+  // On the final mobile showcase screen, repeatedly rotate only the screenshot:
+  // hold portrait for 1.5s, landscape for 4s, then repeat.
   useEffect(() => {
     setMobileLandscape(false);
     if (screen.orientation !== 'landscape') return undefined;
 
-    let portraitTimer;
-    const rotateTimer = window.setTimeout(() => {
-      setMobileLandscape(true);
-      portraitTimer = window.setTimeout(() => setMobileLandscape(false), 4000);
-    }, 1500);
-
-    return () => {
-      window.clearTimeout(rotateTimer);
-      window.clearTimeout(portraitTimer);
+    let timer;
+    const cycle = () => {
+      timer = window.setTimeout(() => {
+        setMobileLandscape(true);
+        timer = window.setTimeout(() => {
+          setMobileLandscape(false);
+          cycle();
+        }, 4000);
+      }, 1500);
     };
+
+    cycle();
+    return () => window.clearTimeout(timer);
   }, [screen.id, screen.orientation]);
 
   const go = useCallback((next) => {
