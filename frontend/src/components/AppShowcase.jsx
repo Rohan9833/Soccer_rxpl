@@ -27,6 +27,22 @@ export default function AppShowcase() {
   const tabRefs = useRef([]);
   const mobileTabsRef = useRef(null);  const mobileSwipeStart = useRef(null);
   const screen = APP_SCREENS[index];
+  const [mobileLandscape, setMobileLandscape] = useState(false);
+
+  // On the final mobile showcase screen, rotate only the screenshot:
+  // wait 1.5s, hold landscape for 4s, then return to portrait.
+  useEffect(() => {
+    setMobileLandscape(false);
+    if (screen.orientation !== 'landscape') return undefined;
+
+    const rotateTimer = window.setTimeout(() => {
+      setMobileLandscape(true);
+      const portraitTimer = window.setTimeout(() => setMobileLandscape(false), 4000);
+      return () => window.clearTimeout(portraitTimer);
+    }, 1500);
+
+    return () => window.clearTimeout(rotateTimer);
+  }, [screen.id, screen.orientation]);
 
   const go = useCallback((next) => {
     setState(([cur]) => {
@@ -107,7 +123,7 @@ export default function AppShowcase() {
                   transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                   className="w-full"
                 >
-                  <IPhoneMockup src={screen.src} alt={`Sales Soccer app: ${screen.title} screen`} priority={index === 0} />
+                  <IPhoneMockup src={screen.src} alt={`Sales Soccer app: ${screen.title} screen`} priority={index === 0} rotateScreen={mobileLandscape} />
                 </motion.div>
               </AnimatePresence>
             </div>
