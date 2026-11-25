@@ -478,6 +478,18 @@
   #game .pitch-performance {
     padding-inline: 0;
   }
+  /* Give the mobile pitch the same dimensional perspective as desktop,
+     while keeping it compact and with tighter, squarer corners. */
+  #game .pitch-performance .origin-bottom {
+    transform: rotateX(17deg) !important;
+    transform-origin: bottom center !important;
+  }
+  #game .pitch-performance .origin-bottom > .relative {
+    aspect-ratio: 2.1 / 1 !important;
+    border-radius: 14px !important;
+    border-width: 1.5px !important;
+    box-shadow: 0 18px 34px -16px rgba(0, 0, 0, 0.85) !important;
+  }
   #game .pitch-zones {
     margin-top: 9px !important;
     gap: 0 !important;
