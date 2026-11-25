@@ -238,7 +238,7 @@
   #top .hero-layout {
     display: block !important;
     position: relative;
-    min-height: 450px !important;
+    min-height: 401px !important;
     padding-top: 22px !important;
     padding-bottom: 12px !important;
   }
@@ -324,7 +324,7 @@
 }
 @media (max-width: 380px) {
   #top .hero-layout {
-    min-height: 420px !important;
+    min-height: 363px !important;
   }
   #top .hero-headline {
     width: 59%;
