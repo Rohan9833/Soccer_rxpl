@@ -146,10 +146,7 @@ export default function AppShowcase() {
                   <div className="app-mobile-upload-icon"><Sparkles /></div>
                   <p className="app-mobile-screen-count">Screen {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</p>
                   <h3>{screen.title}</h3>
-                  <p>{screen.description}</p>
-                  <div className="app-mobile-screen-tags">
-                    {screen.tags.map((tag) => <span key={tag}>{tag}</span>)}
-                  </div>
+                  <p className="app-mobile-screen-description">{screen.description}</p>
                 </motion.div>
               </AnimatePresence>
             </div>
