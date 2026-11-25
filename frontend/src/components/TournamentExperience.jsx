@@ -68,7 +68,7 @@ function Trophy() {
   );
 }
 
-const STAGES = ['League Matches', 'Quarterfinals', 'Semifinals', 'Finals'];
+const STAGES = ['League Matches', 'Quarter finals', 'Semi finals', 'Finals'];
 
 // Shared bracket structure used for both mobile (scaled) and desktop
 function BracketLayout() {
