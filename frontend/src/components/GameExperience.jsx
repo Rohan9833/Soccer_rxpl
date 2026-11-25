@@ -536,7 +536,7 @@ export default function GameExperience() {
             alive on the football field.
           </p>
         </div>
-        <div className="game-cards mt-14 grid gap-5 md:grid-cols-2">
+        <div className="game-cards mt-8 grid gap-4 md:grid-cols-2">
           {[
             {
               icon: Zap,
@@ -559,24 +559,24 @@ export default function GameExperience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="game-card glass group relative overflow-hidden p-8 sm:p-10"
+              className="game-card glass group relative flex min-h-[150px] items-center overflow-hidden p-5 sm:p-7"
             >
               <div
                 aria-hidden="true"
                 className={`absolute -right-16 -top-16 h-56 w-56 rounded-full bg-gradient-to-br ${c.accent} to-transparent blur-2xl transition-opacity duration-500 group-hover:opacity-80`}
               />
-              <div className="game-card-content relative flex items-start gap-5">
-                <span className="game-card-icon flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-gradient shadow-glow">
-                  <c.icon size={26} />
+              <div className="game-card-content relative flex w-full items-center gap-4">
+                <span className="game-card-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-gradient shadow-glow">
+                  <c.icon size={23} />
                 </span>
                 <div>
-                  <h3 className="game-card-title headline text-4xl sm:text-5xl">
+                  <h3 className="game-card-title headline text-3xl sm:text-4xl">
                     {c.name}
                   </h3>
-                  <p className="game-card-line mt-2 font-display text-xl font-semibold uppercase tracking-wide text-pink-electric">
+                  <p className="game-card-line mt-1 font-display text-base font-semibold uppercase tracking-wide text-pink-electric">
                     {c.line}
                   </p>
-                  <p className="game-card-copy mt-3 text-white/70">{c.text}</p>
+                  <p className="game-card-copy mt-2 text-sm text-white/70">{c.text}</p>
                   {/* <p className="game-card-mobile-copy hidden">
                     {i === 0
                       ? "Log field activities like calls, visits, and demos."
