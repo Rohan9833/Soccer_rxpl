@@ -20,6 +20,7 @@ export default function IPhoneMockup({
   priority = false,
   className = '',
   glow = true,
+  rotateScreen = false,
 }) {
   return (
     <div className={`relative ${className}`} style={{ containerType: 'inline-size' }}>
@@ -49,7 +50,8 @@ export default function IPhoneMockup({
             fetchpriority={priority ? 'high' : 'auto'}
             decoding="async"
             draggable={false}
-            className="block h-full w-full select-none object-contain"
+            className={`block h-full w-full select-none object-contain transition-transform duration-700 ease-in-out ${rotateScreen ? 'rotate-90 scale-[1.45]' : 'rotate-0 scale-100'}`}
+            style={{ transformOrigin: 'center center' }}
           />
           {/* Dynamic Island: sits in the blank centre of the screenshot's own status bar */}
           <span
