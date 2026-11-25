@@ -151,10 +151,14 @@ export default function AppShowcase() {
               </AnimatePresence>
             </div>
           </div>
-          <div className="app-mobile-dots" role="tablist" aria-label="Choose app screen">
-            {APP_SCREENS.map((s, i) => (
-              <button key={s.id} type="button" role="tab" aria-selected={i === index} aria-label={s.title} onClick={() => go(i)} />
-            ))}
+          <div className="app-mobile-navigation">
+            <button type="button" className="app-mobile-nav-arrow" onClick={() => go(index - 1)} aria-label="Previous screen"><ChevronLeft size={22} /></button>
+            <div className="app-mobile-dots" role="tablist" aria-label="Choose app screen">
+              {APP_SCREENS.map((s, i) => (
+                <button key={s.id} type="button" role="tab" aria-selected={i === index} aria-label={s.title} onClick={() => go(i)} />
+              ))}
+            </div>
+            <button type="button" className="app-mobile-nav-arrow" onClick={() => go(index + 1)} aria-label="Next screen"><ChevronRight size={22} /></button>
           </div>
         </div>
 
