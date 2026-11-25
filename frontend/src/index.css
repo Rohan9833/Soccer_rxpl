@@ -488,7 +488,19 @@
     aspect-ratio: 2.1 / 1 !important;
     border-radius: 14px !important;
     border-width: 1.5px !important;
+    clip-path: polygon(7% 0, 93% 0, 100% 100%, 0 100%) !important;
     box-shadow: 0 18px 34px -16px rgba(0, 0, 0, 0.85) !important;
+  }
+  /* Perspective taper: far edge narrower, near edge wider. Keep pitch markings,
+     goal and animated players within the same trapezoid on mobile. */
+  #game .pitch-performance svg,
+  #game .pitch-performance > div > div:nth-child(2),
+  #game .pitch-performance > div > div:nth-child(3),
+  #game .pitch-performance > div > div:nth-child(4) {
+    clip-path: polygon(7% 0, 93% 0, 100% 100%, 0 100%) !important;
+  }
+  #game .pitch-performance .origin-bottom > .relative > div:first-child {
+    clip-path: polygon(7% 0, 93% 0, 100% 100%, 0 100%) !important;
   }
   #game .pitch-zones {
     margin-top: 9px !important;
