@@ -35,13 +35,16 @@ export default function AppShowcase() {
     setMobileLandscape(false);
     if (screen.orientation !== 'landscape') return undefined;
 
+    let portraitTimer;
     const rotateTimer = window.setTimeout(() => {
       setMobileLandscape(true);
-      const portraitTimer = window.setTimeout(() => setMobileLandscape(false), 4000);
-      return () => window.clearTimeout(portraitTimer);
+      portraitTimer = window.setTimeout(() => setMobileLandscape(false), 4000);
     }, 1500);
 
-    return () => window.clearTimeout(rotateTimer);
+    return () => {
+      window.clearTimeout(rotateTimer);
+      window.clearTimeout(portraitTimer);
+    };
   }, [screen.id, screen.orientation]);
 
   const go = useCallback((next) => {
