@@ -75,6 +75,11 @@ export default function Header({ logoVisible = true }) {
         </nav>
 
         <div className="flex items-center gap-3">
+          <img
+            src="/assets/Productbydigilateral.png"
+            alt="Product by digiLATERAL"
+            className="h-7 w-auto max-w-[108px] object-contain sm:h-8"
+          />
           <a href="#demo" className="btn-primary hidden !px-5 !py-2.5 !text-base sm:inline-flex">
             Request a Demo
           </a>
