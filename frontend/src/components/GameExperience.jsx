@@ -317,10 +317,14 @@ function Pitch() {
           ? String(0.35 + 0.65 * Math.sin(Math.PI * runP))
           : "0";
       if (goalRef.current) {
-        const on = t >= T.ballIn && t < T.goalEnd;
+        const goalOn = t >= T.ballIn && t < T.goalEnd;
+        const dribbleOn = running;
+        const label = goalOn ? "Goal!" : dribbleOn ? "Dribble" : "";
+        const on = goalOn || dribbleOn;
         const p = clamp01((t - T.ballIn) / 250);
+        goalRef.current.textContent = label;
         goalRef.current.style.opacity = on ? "1" : "0";
-        goalRef.current.style.transform = `translate(-50%, -50%) scale(${on ? 0.7 + 0.35 * p : 0.7})`;
+        goalRef.current.style.transform = `translate(-50%, -50%) scale(${goalOn ? 0.7 + 0.35 * p : dribbleOn ? 1 : 0.7})`;
       }
       if (layerRef.current) {
         const fade =
