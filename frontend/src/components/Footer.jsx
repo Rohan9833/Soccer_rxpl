@@ -39,7 +39,7 @@ export default function Footer() {
               <img
                 src="/assets/Productbydigilateral.png"
                 alt="Product by digiLATERAL"
-                className="ml-auto h-9 w-auto max-w-[150px] object-contain"
+                className="ml-auto h-[4rem] w-auto max-w-[173px] object-contain"
               />
             </div>
             <p className="headline mt-5 text-3xl">
