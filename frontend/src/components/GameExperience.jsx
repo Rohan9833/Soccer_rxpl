@@ -417,7 +417,7 @@ function Pitch() {
         <div
           ref={layerRef}
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
+          className="pointer-events-none absolute inset-0 isolate"
         >
           {DEFENDERS.map((d, i) => (
             <Figure
@@ -592,7 +592,7 @@ export default function GameExperience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8 }}
-          className="game-performance-visual mt-16 sm:mt-20"
+          className="game-performance-visual relative isolate z-0 mt-16 sm:mt-20"
         >
           <Pitch />
         </motion.div>
