@@ -84,9 +84,8 @@ export default function Hero({ ready = true }) {
             custom={3}
             className="hero-actions mt-9 flex flex-col gap-4 sm:flex-row"
           >
-            <a href="#demo" className="btn-primary group">
-              Request a Demo
-              <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+            <a href="#demo" className="btn-primary group !!text-[1.9 rem]">
+              Request Demo
             </a>
             <a href="#app" className="btn-ghost group">
               <Smartphone size={20} className="text-pink-electric" />

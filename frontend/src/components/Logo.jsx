@@ -9,7 +9,7 @@ export default function Logo({ className = '', imgClassName = 'h-9 sm:h-10', pla
       className={
         plain
           ? `inline-flex items-center ${className}`
-          : `inline-flex items-center rounded-2xl bg-white px-3 py-1.5 shadow-[0_8px_30px_-10px_rgba(194,29,143,0.6)] ring-1 ring-white/60 ${className}`
+          : `inline-flex items-center rounded-2xl bg-white px-3 py-1.5  ring-1 ring-white/60 ${className}`
       }
     >
       <img

@@ -48,7 +48,7 @@ function StickyDemoCTA() {
           className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-night-950/85 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl sm:hidden"
         >
           <a href="#demo" className="btn-primary w-full !py-3">
-            Request a Demo <ArrowRight size={18} />
+            Request Demo 
           </a>
         </motion.div>
       )}

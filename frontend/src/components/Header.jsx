@@ -81,7 +81,7 @@ export default function Header({ logoVisible = true }) {
             className="h-7 w-auto max-w-[108px] object-contain sm:h-8"
           />
           <a href="#demo" className="btn-primary hidden !px-5 !py-2.5 !text-base sm:inline-flex">
-            Request a Demo
+            Request Demo
           </a>
           <button
             type="button"
@@ -126,7 +126,7 @@ export default function Header({ logoVisible = true }) {
               ))}
               <li className="pt-8">
                 <a href="#demo" onClick={() => setOpen(false)} className="btn-primary w-full">
-                  Request a Demo
+                  Request Demo
                 </a>
               </li>
             </ul>

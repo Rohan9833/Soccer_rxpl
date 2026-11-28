@@ -55,7 +55,7 @@ export default function Footer() {
               </a>
             ))}
             <a href="#demo" className="text-pink-electric transition hover:text-gray-900">
-              Request a Demo
+              Request Demo
             </a>
           </nav>
         </div>

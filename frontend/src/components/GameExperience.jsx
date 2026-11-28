@@ -596,7 +596,7 @@ export default function GameExperience() {
         >
           <Pitch />
         </motion.div>
-        <div
+        {/* <div
           className="mobile-performance-stats hidden"
           aria-label="Live field performance statistics"
         >
@@ -613,10 +613,10 @@ export default function GameExperience() {
               <span>{s.label}</span>{" "}
             </div>
           ))}{" "}
-        </div>{" "}
-        <p className="mobile-performance-caption hidden">
+        </div>{" "} */}
+        {/* <p className="mobile-performance-caption hidden">
           Live Field Performance
-        </p>{" "}
+        </p>{" "} */}
         <ol className="game-journey mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
           {JOURNEY.map((s, i) => (
             <li
