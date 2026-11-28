@@ -38,7 +38,7 @@ export default function Header({ logoVisible = true }) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-violet-royal/10 bg-white transition-shadow duration-300 ${
+      className={`fixed inset-x-0 top-0 z-[1000] border-b border-violet-royal/10 bg-white transition-shadow duration-300 ${
         scrolled || open ? 'shadow-[0_10px_30px_-12px_rgba(42,11,74,0.55)]' : ''
       }`}
     >
